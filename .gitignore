@@ -1,0 +1,23 @@
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python cache & logs
+__pycache__/
+*.pyc
+*.log
+
+# Screenshots and test output
+*screenshot*.png
+test_*.py
+
+# User uploaded videos (keep directory via .gitkeep)
+original/*.mp4
+original/*.mov
+original/*.webm
+original/*.mkv
+!original/.gitkeep

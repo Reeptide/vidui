@@ -1,0 +1,822 @@
+LECTURE TRANSCRIPT
+============================================================
+Original duration  : 00:55:00
+Cleaned duration   : 00:24:00
+Speaker profile    : NORMAL  |  pitch 304 Hz  |  SNR 21 dB  |  VAD threshold 0.3
+============================================================
+
+[00:00:00 -> 00:00:08]
+1 by 2, where it will go? n plus 1 by 2. No, no what I am telling is see the formula
+
+[00:00:08 -> 00:00:15]
+when you when you talk about if you have a pattern, sorry if you have a text please
+
+[00:00:15 -> 00:00:16]
+let
+
+[00:00:16 -> 00:00:23]
+us say I am keeping equal numbers characters 1, 2, 3, 4, 5, 6 there are 6 characters in
+
+[00:00:23 -> 00:00:34]
+the text. If I want to align a pattern please 1, 2, 3, 1, 2, 3, 1, 2, 3. So, let us say
+
+[00:00:35 -> 00:00:44]
+at least two complete thrice the number of patterns matching the count should be double
+
+[00:00:44 -> 00:00:49]
+the size of the m at least at least it is at most it could be anything.
+
+[00:00:49 -> 00:00:59]
+Now, the relation between n and m is to find the m it is usually we usually write it as
+
+[00:00:59 -> 00:01:07]
+n plus 1 by 2. Can you tell me what is n plus 1 by 2 in terms of it is a mid position? You
+
+[00:01:07 -> 00:01:15]
+should at least have the length of the pattern to be the possible mid it will go till the
+
+[00:01:15 -> 00:01:19]
+mid position that is what I am telling. Why it is mid can you tell me?
+
+[00:01:20 -> 00:01:21]
+It can do some
+
+[00:01:21 -> 00:01:27]
+number of iterations. How many number of iteration that number of iteration will be exactly equal
+
+[00:01:27 -> 00:01:41]
+to the pattern length understood? Yes, I will repeat I will repeat the text it takes m as
+
+[00:01:41 -> 00:01:48]
+the time efficiency it will exit by comparing at least one element is what we have noted.
+
+[00:01:48 -> 00:01:55]
+At least to exit one element and to compare m times I
+
+[00:01:56 -> 00:01:59]
+will repeat at least to compare
+
+[00:01:59 -> 00:02:00]
+m times
+
+[00:02:00 -> 00:02:10]
+must be of length m correct and this m can be either here or here or here
+
+[00:02:10 -> 00:02:11]
+until
+
+[00:02:11 -> 00:02:18]
+unless you pass the entire string. You can see the last element marked at this place.
+
+[00:02:18 -> 00:02:22]
+What is the number of comparison at least you did
+
+[00:02:22 -> 00:02:26]
+what is 3 is the pattern length. So,
+
+[00:02:27 -> 00:02:29]
+with this they reduce that the minimum
+
+[00:02:30 -> 00:02:37]
+n and m should be at least m should be n plus 1
+
+[00:02:37 -> 00:02:38]
+by 2 of length
+
+[00:02:38 -> 00:02:44]
+position. If it goes till the mid position it will then increment and the
+
+[00:02:44 -> 00:02:54]
+count will be equal to m. To pass this to pass this I want m n minus m plus 1 to pass
+
+[00:02:54 -> 00:02:56]
+this I want this as the relation
+
+[00:02:56 -> 00:03:00]
+I will explain and come in yes is this clear?
+
+[00:03:01 -> 00:03:07]
+Tell me why I have written theta of m with n greater than or equal to 2 m minus 1 and
+
+[00:03:07 -> 00:03:10]
+I have written big o of m can you tell me why quickly
+
+[00:03:11 -> 00:03:13]
+yes if you if you can
+
+[00:03:13 -> 00:03:14]
+less than
+
+[00:03:14 -> 00:03:19]
+m or n could be equal to m and in the best case it gives me constant and on the lower
+
+[00:03:19 -> 00:03:24]
+bound I am getting constant and on the upper bound I am getting m. Can I relate both of
+
+[00:03:24 -> 00:03:32]
+them using theta notations one is a constant the other one is a linear program relate both
+
+[00:03:32 -> 00:03:37]
+of them with the theta notation what is the constraint of the theta? Both the upper bound
+
+[00:03:37 -> 00:03:42]
+and the lower bound should be of the same function right function of order time right
+
+[00:03:42 -> 00:03:48]
+same order of time that is the reason you can see if I am trying to affix for any n
+
+[00:03:48 -> 00:03:55]
+and m I should only say the upper bound works for me if it is known what is the strength
+
+[00:03:55 -> 00:04:02]
+of n in terms of m I can say that it is theta of m this detail is not there in the levitin
+
+[00:04:02 -> 00:04:08]
+you can also check ok this much detail for all possible cases it is not there it is been
+
+[00:04:08 -> 00:04:15]
+included the reason is ISA because you get m c q questions is it clear ok now what is
+
+[00:04:15 -> 00:04:18]
+the worst case did we solve it
+
+[00:04:18 -> 00:04:22]
+did we solve it am I getting the same thing n m minus m
+
+[00:04:22 -> 00:04:30]
+square m ok this is the same case that I get and I say it belongs to theta of n m the reason
+
+[00:04:30 -> 00:04:32]
+is the reason is
+
+[00:04:33 -> 00:04:37]
+and m m is always less and m is
+
+[00:04:37 -> 00:04:39]
+if the pattern length is 3 and
+
+[00:04:39 -> 00:04:47]
+n is 6 by 18 and 3 square is only 9 ok even in that case I would get n m as the highest
+
+[00:04:47 -> 00:04:54]
+value and also look at the sign that I have what is the sign it is minus m square right
+
+[00:04:54 -> 00:05:02]
+that is the reason we ignore this and say it is theta of n m to average see the notations
+
+[00:05:02 -> 00:05:10]
+are changing so you should to the notation in the average case my pattern
+
+[00:05:10 -> 00:05:16]
+is present either at the middle or at the left and right of the middle we
+
+[00:05:16 -> 00:05:17]
+will definitely
+
+[00:05:17 -> 00:05:22]
+do m if the pattern is present that is the case that I am giving if the pattern is present
+
+[00:05:22 -> 00:05:29]
+I will go at least till n plus 1 by 2 and then search m correct what is that you get
+
+[00:05:29 -> 00:05:33]
+n plus 1 by 2 into m you will get n m
+
+[00:05:33 -> 00:05:36]
+other half the pattern is not there
+
+[00:05:36 -> 00:05:37]
+half present
+
+[00:05:37 -> 00:05:44]
+only the prefix is present or it is not present I know that if the pattern is not present
+
+[00:05:44 -> 00:05:52]
+either I can exit by 1 constant or by 2 constant or by 3 to the maximum constant is called
+
+[00:05:52 -> 00:06:07]
+as average so it is 1 by 2 into n ok what is n minus m there you go till the last m
+
+[00:06:07 -> 00:06:13]
+plus 1 by 2 m is already a small value at least to the middle of the string you will
+
+[00:06:13 -> 00:06:19]
+try to search for it ok you might exit at 1 character you might exit at 2 character
+
+[00:06:19 -> 00:06:28]
+or at the middle character right in such cases m plus 1 by 2 is a small constant and c into
+
+[00:06:28 -> 00:06:36]
+n minus m would give me linear multiplied by a constant towards the lower part of it
+
+[00:06:36 -> 00:06:42]
+there is a constant multiplication of linear and towards the higher part of it I have n
+
+[00:06:42 -> 00:06:50]
+into m ok because of this can I now fix theta notation orders are changed correct the lower
+
+[00:06:50 -> 00:06:54]
+bound has I will repeat ok
+
+[00:06:54 -> 00:07:00]
+see on the upper bound I get n plus 1 by 2 and it tries to
+
+[00:07:00 -> 00:07:11]
+multiply all m on the lower bound I get m plus 1 by 2 n minus m ok now n is usually
+
+[00:07:11 -> 00:07:19]
+a huge number I cannot ignore it as a constant so I will get nm m is always a less value
+
+[00:07:19 -> 00:07:27]
+ok always a less value compare think about you are searching a word in a text book can
+
+[00:07:27 -> 00:07:32]
+we compare the word count with the text book word character count with the text book character
+
+[00:07:32 -> 00:07:38]
+count definitely not so in such cases I consider this to be a constant ok if this is a constant
+
+[00:07:38 -> 00:07:45]
+what happens you get c into m minus c into m right so here it becomes a linear combination
+
+[00:07:45 -> 00:07:50]
+of the constant one lower bound is a linear combination of the constant and upper bound
+
+[00:07:50 -> 00:07:57]
+is a quadratic can we write a theta notation for this no correct so hence we will try to
+
+[00:07:57 -> 00:08:06]
+always tell and talk about the worst possible upper bound taken by the average case ok that
+
+[00:08:06 -> 00:08:16]
+is the reason I try to affect pico of nm now even now even now I repeat if you have confusion
+
+[00:08:16 -> 00:08:25]
+about asymptotic notation this slide will help you to clarify that ok average does not
+
+[00:08:25 -> 00:08:33]
+mean theta notation because for average I am writing big go big go indicates what is
+
+[00:08:33 -> 00:08:40]
+the upper bound taken at the average case scenario by a function ok even here I am writing
+
+[00:08:40 -> 00:08:45]
+in the worst case theta notation that does not mean right worst case need not to be big
+
+[00:08:45 -> 00:08:52]
+go theta indicates in the worst case for all possible inputs it will take n into m as a
+
+[00:08:52 -> 00:08:58]
+time efficiency ok how many of you are very clear about this this slide very important
+
+[00:08:58 -> 00:09:08]
+two marker questions from the Naive Bayes ok ISA apart from this that is good ok apart
+
+[00:09:09 -> 00:09:15]
+from this usual question in the examination write the string matching algorithm write
+
+[00:09:15 -> 00:09:22]
+its analysis framework starting from input till you derive all possible scenarios ok
+
+[00:09:22 -> 00:09:33]
+along with examples will fetch you 8 marks clear I have given you examples also yes ok
+
+[00:09:33 -> 00:09:36]
+try solving this problem try
+
+[00:09:36 -> 00:09:40]
+solving this problem I have a binary text
+
+[00:09:40 -> 00:09:42]
+a binary text
+
+[00:09:42 -> 00:09:48]
+this is not there in the textbook ok I have a binary text
+
+[00:09:48 -> 00:09:52]
+999 all filled with
+
+[00:09:52 -> 00:09:53]
+0 have
+
+[00:09:53 -> 00:09:56]
+a binary text so it can only hold the binary values
+
+[00:09:57 -> 00:10:00]
+0 to 999 the position of
+
+[00:10:00 -> 00:10:14]
+the binary text is filled with 0 ok I have a pattern a pattern 0 0 0 0 0 0 1 0 1 0 1
+
+[00:10:14 -> 00:10:20]
+0 1 0 0 1 1 0 1 1 ok I have given you
+
+[00:10:21 -> 00:10:24]
+times the basic operation will run for these number
+
+[00:10:24 -> 00:10:27]
+of patterns is the question very clear
+
+[00:10:28 -> 00:10:30]
+ok you have 4 5 questions
+
+[00:10:30 -> 00:10:35]
+I could see a big question mark no clear
+
+[00:10:35 -> 00:10:38]
+Laksh Nodh Sitalva you do not have any notes
+
+[00:10:38 -> 00:10:38]
+solve
+
+[00:10:38 -> 00:10:42]
+the problem solve the problem
+
+[00:10:42 -> 00:10:45]
+m so that it can situation
+
+[00:10:46 -> 00:10:51]
+technique from brute force ok you can add bubble sort and selection sort also for the
+
+[00:10:51 -> 00:10:57]
+not in not in the syllabus as of now ok we will do a hands on for that ok
+
+[00:10:57 -> 00:10:58]
+method
+
+[00:10:59 -> 00:11:08]
+which not explored off instead of taking n square as a time efficiency it takes
+
+[00:11:09 -> 00:11:10]
+exhaustive
+
+[00:11:10 -> 00:11:18]
+time efficiency like n power n n factorial and 2 power n ok it is towards the extreme
+
+[00:11:18 -> 00:11:21]
+corner of the order of the growth ok
+
+[00:11:21 -> 00:11:26]
+very simple example I will start from here let us say the given input is 3 to 1
+
+[00:11:27 -> 00:11:28]
+example
+
+[00:11:28 -> 00:11:31]
+the reason is you can easily find out how many times we are doing
+
+[00:11:31 -> 00:11:32]
+sorting output to
+
+[00:11:32 -> 00:11:39]
+be 1 2 3 1 should be less than 2 2 should be less than 3 need
+
+[00:11:39 -> 00:11:42]
+to write a function and
+
+[00:11:42 -> 00:11:43]
+it is called as each sorted
+
+[00:11:43 -> 00:11:48]
+of n ok I will start a for loop which starts from i is equal
+
+[00:11:48 -> 00:11:58]
+to 0 to n minus 1 ok say n minus 2 not even 1 because I need to go to the next adjacent
+
+[00:11:58 -> 00:12:00]
+element correct if
+
+[00:12:00 -> 00:12:09]
+than array of i plus 1 return minus 1 or 0 ok however you want to
+
+[00:12:09 -> 00:12:14]
+out of the for loop I would return 1 is it true
+
+[00:12:14 -> 00:12:17]
+it is called as each sorted let us take
+
+[00:12:17 -> 00:12:26]
+an input 3 to 1 is given to given to me I will pass this greater than 2 and hence it
+
+[00:12:26 -> 00:12:33]
+return 0 indicating that it is not sorted ok if it is not sorted I need to generate
+
+[00:12:33 -> 00:12:39]
+one more permutation of this one more representation of this number how do I do that I will say
+
+[00:12:39 -> 00:12:40]
+1 and
+
+[00:12:40 -> 00:12:48]
+hence it comes out saying that return 0 again I come here the wrong representation
+
+[00:12:48 -> 00:12:50]
+so I will change the places we
+
+[00:12:51 -> 00:12:55]
+will pass this permutation there 1 is less than 3 I agree
+
+[00:12:55 -> 00:13:01]
+but 3 in the second iteration 3 is greater than 2 and hence it return 0 now I will change
+
+[00:13:01 -> 00:13:08]
+try to change 1 purposefully I am doing a mistake so that I get the correct result at
+
+[00:13:08 -> 00:13:09]
+the end ok
+
+[00:13:09 -> 00:13:15]
+greater than 1 hence it gives me a result so I will go to 3 to 2 1 3 again
+
+[00:13:16 -> 00:13:23]
+this is not sorted hence the next possibility is only this apart from this can you represent
+
+[00:13:23 -> 00:13:25]
+any other combinations no
+
+[00:13:25 -> 00:13:28]
+3 inputs the number is 6
+
+[00:13:28 -> 00:13:32]
+to 1 which is giving me 6 which is nothing
+
+[00:13:32 -> 00:13:33]
+but factorial 3
+
+[00:13:34 -> 00:13:36]
+fusion method
+
+[00:13:37 -> 00:13:42]
+which can generate all possible permutation representation of
+
+[00:13:42 -> 00:13:50]
+the given input I subject those inputs into each sorted until each sorted tells me 1 I
+
+[00:13:50 -> 00:13:56]
+will be keep running this luckily if I get this 1 2 3 at the beginning it comes out with
+
+[00:13:56 -> 00:14:06]
+1 iteration but in the worst case what happens it will be n or n factorial n factorial n
+
+[00:14:06 -> 00:14:14]
+factorial is your outer loop n factorial is your outer loop loop you have each sorted
+
+[00:14:14 -> 00:14:19]
+also each sorted runs for n
+
+[00:14:19 -> 00:14:23]
+runs between 0 to n minus 2 and the basis of
+
+[00:14:24 -> 00:14:25]
+if you try to
+
+[00:14:25 -> 00:14:30]
+find out what is the total time complexity of this brute force method it will be n factorial
+
+[00:14:30 -> 00:14:41]
+into n ok is this linear quadratic polynomial no it is exponential have you ever thought
+
+[00:14:41 -> 00:14:44]
+of this example for sorting or
+
+[00:14:45 -> 00:14:48]
+thought of solving any given problem like this
+
+[00:14:48 -> 00:14:53]
+input is only 3 how hard it will take it will only take 6 times think about
+
+[00:14:53 -> 00:14:56]
+the input when it is 10 ,000 what happens
+
+[00:14:57 -> 00:15:01]
+is the input is a number of times the basic operation
+
+[00:15:02 -> 00:15:08]
+you want me to represent this or it is self understandable right this is something called
+
+[00:15:08 -> 00:15:12]
+as exhaustive search it is in the natural language ok.
+
+[00:15:12 -> 00:15:20]
+So, you have a function which says exhaustive search given an input for each permutation
+
+[00:15:21 -> 00:15:29]
+that you generate check it is each sorted if it is sorted return otherwise go back and
+
+[00:15:29 -> 00:15:38]
+do the task yes. So, what is the definition of exhaustive search can you tell me now you
+
+[00:15:38 -> 00:15:43]
+have got two different types of sorting one which does the sorting method in n square
+
+[00:15:43 -> 00:15:49]
+time efficiency the other one does it in n factorial right highest term n factorial
+
+[00:15:49 -> 00:15:55]
+into n now what is the difference between both of them one takes huge time yes then
+
+[00:15:55 -> 00:15:59]
+bubble sort and selection sort is better compared to this true right
+
+[00:16:00 -> 00:16:02]
+ok I have written already
+
+[00:16:02 -> 00:16:06]
+sorted is it fine yes I represented this on the board ok
+
+[00:16:07 -> 00:16:10]
+please this is where does
+
+[00:16:10 -> 00:16:10]
+it sort
+
+[00:16:10 -> 00:16:15]
+much right it is again not in the syllabus if you open your levitin textbook you do not
+
+[00:16:15 -> 00:16:18]
+find it ok yeah
+
+[00:16:18 -> 00:16:20]
+curiosity that is all
+
+[00:16:21 -> 00:16:24]
+of times until unless it breaks within correct
+
+[00:16:25 -> 00:16:29]
+it is greater than a i a of i plus 1 it just swaps
+
+[00:16:29 -> 00:16:30]
+concentrate you
+
+[00:16:31 -> 00:16:32]
+can discuss later
+
+[00:16:32 -> 00:16:40]
+please 3 2 1 2 so obviously it will swap if
+
+[00:16:40 -> 00:16:43]
+there is a swap it is sorted
+
+[00:16:44 -> 00:16:49]
+it is not sorted so it goes back to while true
+
+[00:16:49 -> 00:16:52]
+equal to 0 to n minus 1 2 is less than
+
+[00:16:52 -> 00:16:56]
+3 3 is greater than 1
+
+[00:16:56 -> 00:17:02]
+greater than 3 no next 3 is greater than 1 yes are you going to
+
+[00:17:02 -> 00:17:11]
+swap it what is that you swap you get 3 correct again it is not sorted goes to the for loop
+
+[00:17:11 -> 00:17:13]
+2 is greater than 1
+
+[00:17:14 -> 00:17:19]
+it is sorted it comes out correct it is sorted it comes out now
+
+[00:17:20 -> 00:17:23]
+will this sort is
+
+[00:17:23 -> 00:17:26]
+then what is the next question
+
+[00:17:26 -> 00:17:27]
+efficiency
+
+[00:17:27 -> 00:17:29]
+what is the efficiency of this
+
+[00:17:29 -> 00:17:32]
+no I want you to tell me this is this is something very
+
+[00:17:32 -> 00:17:32]
+interesting
+
+[00:17:33 -> 00:17:39]
+no try out I want it no no it is not n square
+
+[00:17:39 -> 00:17:42]
+not n square that is what
+
+[00:17:42 -> 00:17:46]
+I said concentrate you have seen it already
+
+[00:17:47 -> 00:17:52]
+do not go by while loop while is just controlling the break that
+
+[00:17:52 -> 00:17:54]
+is all that is written that is all okay
+
+[00:17:55 -> 00:17:59]
+the pattern that I took is 3 2 1 what if I have
+
+[00:17:59 -> 00:18:06]
+it I have taken a pattern in such a way that it takes all possible fine tunes to come to
+
+[00:18:06 -> 00:18:20]
+1 2 3 the while loop see there I said permutation indicating that it takes permutation as a
+
+[00:18:20 -> 00:18:27]
+literally in the worst case what happens it will go till all possible representation
+
+[00:18:27 -> 00:18:35]
+in the worst case when do you get 1 2 3 the sorted input sorted output at the end of
+
+[00:18:35 -> 00:18:48]
+factorial n so this while loop will go till factorial n times I know it sorts sorts but
+
+[00:18:48 -> 00:18:53]
+what is the constraint it sorts indirectly if
+
+[00:18:53 -> 00:18:58]
+do not go by the 3 numbers that I have taken I cannot represent 10,000 and try to sort
+
+[00:18:58 -> 00:19:01]
+it correct that is the reason why I have taken 3
+
+[00:19:01 -> 00:19:03]
+if it is not 6 it will go to 5 that does
+
+[00:19:03 -> 00:19:05]
+not mean it is n minus 1 factorial
+
+[00:19:06 -> 00:19:11]
+factorial only okay that is the reason I said think
+
+[00:19:11 -> 00:19:18]
+about the code okay do not just go by the while loop and for loop how many have thought
+
+[00:19:18 -> 00:19:21]
+truly n square at the time efficiency because
+
+[00:19:21 -> 00:19:24]
+it has only 2 loops you thought it takes n
+
+[00:19:24 -> 00:19:30]
+square at the time efficiency try using the input before just going to the answer okay
+
+[00:19:30 -> 00:19:32]
+is it clear see
+
+[00:19:32 -> 00:19:38]
+I am just giving you sorted examples nothing much which is very basic
+
+[00:19:38 -> 00:19:45]
+let me check okay no he said n square okay I said let me check
+
+[00:19:46 -> 00:19:47]
+write the code and tell
+
+[00:19:47 -> 00:19:54]
+me n square n cube as such okay now you you can be very sure that it is a recursive equation
+
+[00:19:54 -> 00:19:59]
+you can set up a recurrence relation try to solve it using backward substitution method
+
+[00:19:59 -> 00:20:05]
+and you get the results okay what is happening can you see here you pass 0 to n minus 1
+
+[00:20:05 -> 00:20:06]
+1
+
+[00:20:06 -> 00:20:22]
+up and the value okay is kept aside the remaining part is given again for sorting back is it
+
+[00:20:22 -> 00:20:24]
+something very similar to your bubble sort
+
+[00:20:24 -> 00:20:27]
+yes what do you do in the bubble sort you
+
+[00:20:27 -> 00:20:33]
+try to move the heaviest element to the last that is what I am trying to do it
+
+[00:20:33 -> 00:20:33]
+swap it
+
+[00:20:33 -> 00:20:37]
+to the a plus 1 do it for n
+
+[00:20:37 -> 00:20:40]
+when goes to the last okay when it goes to the last
+
+[00:20:40 -> 00:20:47]
+you know that it is already sorted the remaining elements are not from 0 to n minus 1 but it
+
+[00:20:47 -> 00:20:53]
+is still 0 to n minus 2 that is the reason I am calling the same sorted function a is
+
+[00:20:53 -> 00:21:01]
+equal to 0 to n minus 2 but can you tell me what is the base base case for this recursion
+
+[00:21:01 -> 00:21:07]
+it is it should be sorted but how do you find is it sorted or not so you should call each
+
+[00:21:07 -> 00:21:15]
+sorted function to break this recursion okay that becomes your base case see it is not
+
+[00:21:15 -> 00:21:15]
+direct
+
+[00:21:16 -> 00:21:20]
+usually in the recursion functions that we have written the base case will always
+
+[00:21:20 -> 00:21:22]
+come at the first tell
+
+[00:21:22 -> 00:21:26]
+me why I have kept the base case at the first is there any reason
+
+[00:21:26 -> 00:21:30]
+I am allowing at least once to happen
+
+[00:21:30 -> 00:21:35]
+at least once that to happen any reason for that am
+
+[00:21:35 -> 00:21:41]
+I not wasting one iteration of iteration you can improve you
+
+[00:21:41 -> 00:21:42]
+want to keep each sorted
+
+[00:21:42 -> 00:21:49]
+at the beginning and then call the for loop when it is not correct you can but remember
+
+[00:21:49 -> 00:21:57]
+count is only very minimal that small count will be very minimal right
+
+[00:21:57 -> 00:21:58]
+what is the equation
+
+[00:21:58 -> 00:22:04]
+that you have written t of n is equal to what is that you have written I want to know t
+
+[00:22:04 -> 00:22:06]
+of n minus 1
+
+[00:22:06 -> 00:22:14]
+t of n is equal to t of n minus 1 plus I want the later part is it n or 1
+
+[00:22:14 -> 00:22:24]
+again I am asking is it 1 or n n why you have the base case as each sorted each
+
+[00:22:24 -> 00:22:24]
+sorted what
+
+[00:22:24 -> 00:22:29]
+is the base operation what is the basic operation for the call of
+
+[00:22:30 -> 00:22:31]
+1 it will go
+
+[00:22:31 -> 00:22:38]
+till 0 to n minus 2 right at least comparison will happen see this is how you have to understand
+
+[00:22:38 -> 00:22:44]
+the algorithm right this is the basic operation which runs for at least n minus 1 time so
+
+[00:22:44 -> 00:22:46]
+what is your equation now
+
+[00:22:46 -> 00:22:50]
+n square because this term will become 1
+
+[00:22:51 -> 00:22:52]
+plus n minus 1 plus
+
+[00:22:52 -> 00:23:00]
+n minus 2 of natural numbers so n into n minus 1 by 2 is n plus 1 by 2 is what you get n
+
+[00:23:00 -> 00:23:06]
+square is the highest component and hence you can say that this works in the order of
+
+[00:23:06 -> 00:23:08]
+n square
+
+[00:23:08 -> 00:23:13]
+similar to your bubble sort so can you tell me bubble sort if the question was
+
+[00:23:13 -> 00:23:20]
+write a recursive function write a recursive bubble sort function to sort the given input
+
+[00:23:20 -> 00:23:27]
+you can just copy this algorithm true yes you want to place each sorted before do it
+
+[00:23:27 -> 00:23:32]
+not an issue if you want to place it later do it not an issue but basic operation while
+
+[00:23:32 -> 00:23:37]
+writing if you write plus 1 it goes wrong it will give you n as a time efficiency in
+
+[00:23:37 -> 00:23:45]
+n time efficiency this solution cannot be sort this has to be n square okay I am not
+
+[00:23:45 -> 00:23:55]
+finding the energy in the student Friday you can at least expect 145 after that you will
+
+[00:23:55 -> 00:24:00]
+be free right yes okay copy this we will stop the session today.

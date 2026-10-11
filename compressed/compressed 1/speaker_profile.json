@@ -1,0 +1,12 @@
+{
+  "rms_speech_db": -40.9,
+  "rms_noise_db": -61.9,
+  "snr_db": 21.0,
+  "median_pitch_hz": 304.1,
+  "pitch_variability": 194.9,
+  "speaking_rate_wpm": 64.5,
+  "vad_threshold": 0.3,
+  "speech_pad_ms": 300,
+  "min_silence_ms": 1000,
+  "voice_type": "normal"
+}
