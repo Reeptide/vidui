@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 # Start lightweight local server for VidCompress Demo
+# Uses server.py for Range request support (required for video seeking)
 PORT=8000
 
 echo "=========================================================="
 echo " 🚀 VidCompress Demo Server"
+echo " Range-request enabled for video seeking"
 echo " Open in your browser: http://localhost:${PORT}"
 echo " Press Ctrl+C to stop."
 echo "=========================================================="
@@ -12,9 +14,9 @@ echo "=========================================================="
 (sleep 0.6 && (xdg-open "http://localhost:${PORT}" 2>/dev/null || open "http://localhost:${PORT}" 2>/dev/null)) &
 
 if command -v python3 &>/dev/null; then
-  python3 -m http.server ${PORT}
+  python3 server.py ${PORT}
 elif command -v python &>/dev/null; then
-  python -m http.server ${PORT}
+  python server.py ${PORT}
 else
   echo "Notice: Python not found. You can also double click index.html directly!"
 fi

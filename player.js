@@ -64,15 +64,35 @@ class ModernVideoPlayer {
       
       const handleDrag = (e) => {
         if (!this.isDraggingTimeline) return;
+        e.preventDefault();
         this.seekTimeline(e);
       };
 
-      this.timelineContainer.addEventListener('mousedown', () => {
+      this.timelineContainer.addEventListener('mousedown', (e) => {
+        e.preventDefault();
         this.isDraggingTimeline = true;
+        this.seekTimeline(e);
       });
 
       window.addEventListener('mousemove', handleDrag);
       window.addEventListener('mouseup', () => {
+        this.isDraggingTimeline = false;
+      });
+
+      // Touch support for mobile
+      this.timelineContainer.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        this.isDraggingTimeline = true;
+        this.seekTimeline(e.touches[0]);
+      }, { passive: false });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!this.isDraggingTimeline) return;
+        e.preventDefault();
+        this.seekTimeline(e.touches[0]);
+      }, { passive: false });
+
+      window.addEventListener('touchend', () => {
         this.isDraggingTimeline = false;
       });
     }
