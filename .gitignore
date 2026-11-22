@@ -21,3 +21,9 @@ original/*.mov
 original/*.webm
 original/*.mkv
 !original/.gitkeep
+
+# Large compressed video files (>100MB exceeds GitHub limit)
+compressed/compressed 2/*.mp4
+compressed/compressed 3/*.mp4
+compressed/compressed 4/*.mp4
+

@@ -491,6 +491,23 @@
                 <span id="toggleCompareText">View Side-by-Side Comparison</span>
               </button>
             </div>
+
+            <!-- YouTube-style Chapters Panel -->
+            <div class="chapters-panel" id="chaptersPanel" style="display: none;">
+              <div class="chapters-header">
+                <div class="chapters-title-group">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--secondary-blue-cyan)" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="18" rx="2"></rect>
+                    <line x1="8" y1="3" x2="8" y2="21"></line>
+                    <line x1="2" y1="9" x2="8" y2="9"></line>
+                    <line x1="2" y1="15" x2="8" y2="15"></line>
+                  </svg>
+                  <span>Chapters</span>
+                </div>
+                <span class="chapters-count" id="chaptersCount"></span>
+              </div>
+              <div class="chapters-list" id="chaptersList"></div>
+            </div>
           </div>
 
           <!-- Side-by-side secondary player (hidden by default) -->
@@ -673,25 +690,6 @@
   <!-- Scripts -->
   <script src="player.js"></script>
   <script src="app.js"></script>
-</body>
-
-</html>
-</div>
-
-</div>
-</div>
-</section>
-
-</main>
-
-<!-- Notification Toast -->
-<div class="toast" id="toastNotification" style="display: none;">
-  <span class="toast-message" id="toastMessage">Notification</span>
-</div>
-
-<!-- Scripts -->
-<script src="player.js"></script>
-<script src="app.js"></script>
 </body>
 
 </html>

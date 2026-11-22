@@ -1,0 +1,5 @@
+Cloud Service Models Review and Monolithic vs Microservices [0:00:00-0:08:03]
+Microservices Architecture with Ride Booking Example [0:08:03-0:15:08]
+Microservice Design Principles and Single Responsibility [0:15:08-0:22:46]
+REST API Fundamentals and Synchronous Communication [0:22:46-0:33:29]
+Uniform Interface Constraints and Resource Identification [0:33:29-0:45:07]

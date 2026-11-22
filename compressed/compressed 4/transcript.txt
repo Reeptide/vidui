@@ -1,0 +1,2931 @@
+LECTURE TRANSCRIPT
+============================================================
+Original duration  : 01:04:00
+Cleaned duration   : 00:45:07
+Speaker profile    : LOUD  |  pitch 302 Hz  |  SNR 29 dB  |  VAD threshold 0.45
+============================================================
+
+[00:00:00 -> 00:00:03]
+We complete all the three varieties, ERs, PAS and SAS.
+
+[00:00:04 -> 00:00:07]
+My sticky note on my system, if you remember,
+
+[00:00:07 -> 00:00:09]
+I don't know how many of you have remembered,
+
+[00:00:09 -> 00:00:14]
+but I have been trying very hard to complete that part.
+
+[00:00:14 -> 00:00:16]
+If you recall, there are three examples.
+
+[00:00:16 -> 00:00:21]
+I left it open to check whether it is a variety of SAS, PAS.
+
+[00:00:21 -> 00:00:23]
+So those were GitHub was one.
+
+[00:00:23 -> 00:00:28]
+And then using SATGPT with different back-end models,
+
+[00:00:28 -> 00:00:30]
+would it fall into that category,
+
+[00:00:31 -> 00:00:34]
+where you are going ahead with different pricing models,
+
+[00:00:34 -> 00:00:35]
+and then you are using the services?
+
+[00:00:36 -> 00:00:41]
+And one more example came up for PyTorch and maybe VS Code
+
+[00:00:41 -> 00:00:44]
+or any of those IDE kind of environments,
+
+[00:00:44 -> 00:00:47]
+generically, if I have to say that.
+
+[00:00:48 -> 00:00:50]
+So those examples, can we actually
+
+[00:00:50 -> 00:00:53]
+be considering those into the characteristics of service
+
+[00:00:53 -> 00:00:53]
+model?
+
+[00:00:54 -> 00:00:57]
+If so, then should it fall into PAS or SAS?
+
+[00:00:57 -> 00:00:59]
+Those are the connected questions.
+
+[00:00:59 -> 00:01:02]
+And to be honest, I couldn't actually spend time on that,
+
+[00:01:02 -> 00:01:05]
+even though I was very hopeful and considering
+
+[00:01:05 -> 00:01:08]
+the three-day weekend, but still didn't happen that way.
+
+[00:01:08 -> 00:01:12]
+So it is on my note so that I'm not forgetting it.
+
+[00:01:12 -> 00:01:16]
+So that was my justification, I would say,
+
+[00:01:16 -> 00:01:18]
+or maybe a connection where I'm still
+
+[00:01:18 -> 00:01:19]
+keeping it open to continue.
+
+[00:01:20 -> 00:01:22]
+Now coming back to the part where
+
+[00:01:22 -> 00:01:26]
+we are looking at monolithic system or maybe a system
+
+[00:01:26 -> 00:01:28]
+architecture or software architecture
+
+[00:01:28 -> 00:01:31]
+in terms of monolithic or microservice-based.
+
+[00:01:31 -> 00:01:33]
+Now there are a couple of pointers
+
+[00:01:33 -> 00:01:37]
+that we do have somewhere, and probably scalability,
+
+[00:01:37 -> 00:01:39]
+in terms of execution environment,
+
+[00:01:39 -> 00:01:41]
+as well as in terms of scalability
+
+[00:01:41 -> 00:01:45]
+would be the choices where microservices will make an impact.
+
+[00:01:45 -> 00:01:49]
+So that is where the difference comes up.
+
+[00:01:49 -> 00:01:53]
+And from there onwards, if we want to,
+
+[00:01:53 -> 00:01:56]
+probably it would be a good idea for you to even recall,
+
+[00:01:57 -> 00:01:59]
+refresh, whatever you have heard from software
+
+[00:01:59 -> 00:02:02]
+engineering in this aspect, and then try to relate.
+
+[00:02:02 -> 00:02:04]
+So see how that works.
+
+[00:02:04 -> 00:02:08]
+Now microservices, typically if I have to go with one example,
+
+[00:02:09 -> 00:02:10]
+maybe I'll
+
+[00:02:11 -> 00:02:13]
+use the examples that are there on our slide deck.
+
+[00:02:14 -> 00:02:17]
+example where we are looking at ride
+
+[00:02:17 -> 00:02:18]
+booking as an application.
+
+[00:02:19 -> 00:02:22]
+What are all the different steps or tasks
+
+[00:02:22 -> 00:02:24]
+that are there as part of the whole activity?
+
+[00:02:25 -> 00:02:28]
+How do we actually differentiate or maybe come up
+
+[00:02:28 -> 00:02:31]
+with something called as microservices here?
+
+[00:02:31 -> 00:02:36]
+So typically what all we do have as, say, actors on the scene.
+
+[00:02:36 -> 00:02:39]
+Maybe we can start with riders or drivers,
+
+[00:02:39 -> 00:02:43]
+and then rider request will go through a data pipeline,
+
+[00:02:44 -> 00:02:46]
+and then it needs to be communicated
+
+[00:02:46 -> 00:02:50]
+to the stakeholders or maybe the subscribers who
+
+[00:02:50 -> 00:02:51]
+wish to see that information.
+
+[00:02:52 -> 00:02:55]
+So you need to have some kind of a queuing mechanism that
+
+[00:02:55 -> 00:02:58]
+will be there, where I would look at something
+
+[00:02:58 -> 00:03:02]
+as driver assignment, or it could be even the location queue.
+
+[00:03:02 -> 00:03:05]
+Because again, location queue would
+
+[00:03:05 -> 00:03:07]
+be a very important information here
+
+[00:03:07 -> 00:03:11]
+to understand which user or rider request has to be published
+
+[00:03:11 -> 00:03:13]
+to which of the drivers.
+
+[00:03:13 -> 00:03:15]
+To decide on that, you would have
+
+[00:03:15 -> 00:03:17]
+to keep track of the location again.
+
+[00:03:18 -> 00:03:21]
+And even when the actual ride is happening,
+
+[00:03:21 -> 00:03:23]
+you will have to keep track of the route taken
+
+[00:03:23 -> 00:03:24]
+or the path followed.
+
+[00:03:25 -> 00:03:28]
+Again, for that, you need to have a continuous upgradation
+
+[00:03:28 -> 00:03:30]
+or maybe a tracking of your location services.
+
+[00:03:31 -> 00:03:35]
+or using mic is supposed to be like I can just
+
+[00:03:35 -> 00:03:40]
+control or contain my voice within a one-on-one kind
+
+[00:03:40 -> 00:03:44]
+of a discussion and still be able to be heard.
+
+[00:03:44 -> 00:03:48]
+Now, being able to heard doesn't matter only
+
+[00:03:48 -> 00:03:50]
+if I am speaking, I want to speak.
+
+[00:03:50 -> 00:03:53]
+Some add-on I have used so that it is easy.
+
+[00:03:54 -> 00:03:57]
+But beyond that, if you have made up your mind not to or never
+
+[00:03:57 -> 00:04:00]
+to listen, then I can't help with that, I think.
+
+[00:04:00 -> 00:04:02]
+Help yourself to help me.
+
+[00:04:02 -> 00:04:04]
+Please don't use any other place.
+
+[00:04:05 -> 00:04:06]
+Use the first desk itself.
+
+[00:04:07 -> 00:04:09]
+You might not like me at all.
+
+[00:04:09 -> 00:04:10]
+I am OK with it.
+
+[00:04:10 -> 00:04:12]
+How much of packing arrangement is not needed?
+
+[00:04:12 -> 00:04:14]
+There is no picnic as such.
+
+[00:04:14 -> 00:04:18]
+I can see even your new deskmates are even unhappy
+
+[00:04:18 -> 00:04:21]
+with the rearrangement, more than you people.
+
+[00:04:21 -> 00:04:22]
+I shall change.
+
+[00:04:23 -> 00:04:25]
+Rona, please make space for me.
+
+[00:04:25 -> 00:04:28]
+If any further changes, there are two chairs.
+
+[00:04:29 -> 00:04:30]
+Lucky for us.
+
+[00:04:30 -> 00:04:33]
+You people didn't miss me on Friday, I know that.
+
+[00:04:34 -> 00:04:35]
+But this is for Friday.
+
+[00:04:36 -> 00:04:38]
+When we are looking at this kind of an arrangement,
+
+[00:04:38 -> 00:04:41]
+we see that OK, the requests are being sent out.
+
+[00:04:41 -> 00:04:45]
+And then there is kind of a mechanism or maybe a message
+
+[00:04:46 -> 00:04:50]
+distribution system that comes up where these requests are
+
+[00:04:50 -> 00:04:53]
+to be handled, managed.
+
+[00:04:53 -> 00:04:56]
+Possibly, sometimes a database entry read-write activity
+
+[00:04:56 -> 00:04:57]
+must happen.
+
+[00:04:57 -> 00:05:01]
+So all of those things are part of the whole architecture.
+
+[00:05:02 -> 00:05:04]
+Now, looking at these things, we can easily
+
+[00:05:04 -> 00:05:07]
+see there are typically two queues that I can see.
+
+[00:05:07 -> 00:05:10]
+Location queue, driver assignment queue.
+
+[00:05:10 -> 00:05:14]
+And if needed, we might end up even multiple more other
+
+[00:05:14 -> 00:05:17]
+services which need queuing services.
+
+[00:05:17 -> 00:05:20]
+So with all of these things, we again
+
+[00:05:20 -> 00:05:24]
+try to kind of see something as notification service,
+
+[00:05:25 -> 00:05:29]
+probably an auto notification or an email or a message
+
+[00:05:29 -> 00:05:29]
+to be sent out.
+
+[00:05:30 -> 00:05:32]
+There should be a distributed locking
+
+[00:05:32 -> 00:05:34]
+that comes up where we talk about something
+
+[00:05:34 -> 00:05:36]
+as driver assignment, wherein we do not
+
+[00:05:36 -> 00:05:39]
+want one driver to take up multiple rides.
+
+[00:05:39 -> 00:05:42]
+We do not want any one ride to be taken up
+
+[00:05:42 -> 00:05:44]
+by multiple drivers, both ways.
+
+[00:05:44 -> 00:05:48]
+One driver going for two rides, two different locations,
+
+[00:05:48 -> 00:05:49]
+equally bad idea.
+
+[00:05:50 -> 00:05:51]
+that I need to have a one driver assigned.
+
+[00:05:52 -> 00:05:55]
+So looking at that, we need to kind of come up
+
+[00:05:55 -> 00:05:58]
+with any kind of a synchronization aspect there.
+
+[00:05:58 -> 00:06:02]
+Now for that, what can we do in normal scenarios,
+
+[00:06:02 -> 00:06:06]
+the synchronization can work out in terms of what,
+
+[00:06:07 -> 00:06:08]
+from the perspective of OAS, what
+
+[00:06:08 -> 00:06:11]
+are the typical ways of synchronization?
+
+[00:06:11 -> 00:06:14]
+Mutex locks or semaphore, right?
+
+[00:06:14 -> 00:06:16]
+You can even look at something as monitor.
+
+[00:06:17 -> 00:06:19]
+So you do have certain methods with which
+
+[00:06:19 -> 00:06:23]
+you have to synchronize, meaning one activity or one event
+
+[00:06:23 -> 00:06:26]
+or say one critical section should be occupied or used
+
+[00:06:26 -> 00:06:30]
+by only one user or say only one process.
+
+[00:06:31 -> 00:06:32]
+Now considering all of those activities,
+
+[00:06:33 -> 00:06:36]
+or a mutex lock may not be sufficient enough for me
+
+[00:06:36 -> 00:06:37]
+because of couple of reasons.
+
+[00:06:37 -> 00:06:38]
+What is that?
+
+[00:06:39 -> 00:06:40]
+I do have rider running someplace
+
+[00:06:40 -> 00:06:43]
+and multiple riders running somewhere else,
+
+[00:06:43 -> 00:06:46]
+multiple driver instances running somewhere else,
+
+[00:06:46 -> 00:06:48]
+and all of these are in distributed environment.
+
+[00:06:49 -> 00:06:52]
+And to have any mutex lock within a single system,
+
+[00:06:53 -> 00:06:55]
+I will have a visibility among how many processes
+
+[00:06:55 -> 00:06:58]
+are running and how to synchronize those.
+
+[00:06:58 -> 00:07:01]
+But in this scenario where my processes are running totally
+
+[00:07:01 -> 00:07:05]
+on a different device and I do not have a control
+
+[00:07:05 -> 00:07:06]
+or a visibility in that case.
+
+[00:07:07 -> 00:07:10]
+Now how to kind of synchronize those activities?
+
+[00:07:10 -> 00:07:12]
+Then again you go ahead with something
+
+[00:07:12 -> 00:07:13]
+called as distributed locks.
+
+[00:07:14 -> 00:07:17]
+Mechanisms remains the same, but how do I ensure
+
+[00:07:17 -> 00:07:20]
+that whole mechanism works as the way we expect?
+
+[00:07:20 -> 00:07:23]
+That is where the distributedness comes up, right?
+
+[00:07:23 -> 00:07:27]
+So somewhere else again we try to kind of cover
+
+[00:07:27 -> 00:07:29]
+little more detail on that.
+
+[00:07:29 -> 00:07:32]
+But then this is just a simplified diagram
+
+[00:07:32 -> 00:07:34]
+or an architecture you can say
+
+[00:07:34 -> 00:07:38]
+for the simple example of ride booking.
+
+[00:07:38 -> 00:07:40]
+Now when we are seeing all of these things,
+
+[00:07:40 -> 00:07:44]
+should we see every activity to be a microservice?
+
+[00:07:45 -> 00:07:48]
+Any process can be treated as a microservice?
+
+[00:07:48 -> 00:07:51]
+So those are the questions where we want to now go back
+
+[00:07:51 -> 00:07:54]
+and understand or maybe put up certain rules for us.
+
+[00:07:54 -> 00:07:57]
+Or maybe some more steps that would be helpful.
+
+[00:07:58 -> 00:08:01]
+So if I go back now and try to understand
+
+[00:08:01 -> 00:08:03]
+what do I mean by a microservice?
+
+[00:08:03 -> 00:08:06]
+We say that microservice is an architectural approach
+
+[00:08:06 -> 00:08:09]
+of developing single application
+
+[00:08:09 -> 00:08:12]
+as a suite of small collaborating services,
+
+[00:08:12 -> 00:08:14]
+each running on its own process
+
+[00:08:14 -> 00:08:18]
+and communicating with lightweight mechanisms, right?
+
+[00:08:18 -> 00:08:23]
+So I want to kind of treat them as their own process,
+
+[00:08:24 -> 00:08:25]
+independent processes,
+
+[00:08:25 -> 00:08:28]
+and they need to communicate with each other, right?
+
+[00:08:29 -> 00:08:33]
+So that is where the say idea or the focus comes up.
+
+[00:08:33 -> 00:08:35]
+Now with all of these things,
+
+[00:08:36 -> 00:08:38]
+couple of benefits that are listed out
+
+[00:08:38 -> 00:08:42]
+and many of them we have already like agreed upon,
+
+[00:08:42 -> 00:08:45]
+flexibility, reliability, having a better speed
+
+[00:08:45 -> 00:08:47]
+in terms of your development
+
+[00:08:47 -> 00:08:49]
+because you will be able to develop say
+
+[00:08:49 -> 00:08:52]
+suppose to start with only four microservices,
+
+[00:08:52 -> 00:08:54]
+you deploy them,
+
+[00:08:54 -> 00:08:57]
+make it the basic functionalities features running,
+
+[00:08:57 -> 00:08:59]
+later I want to add few more.
+
+[00:08:59 -> 00:09:01]
+So that option still you will have,
+
+[00:09:01 -> 00:09:04]
+so that is where the development speed overall
+
+[00:09:04 -> 00:09:05]
+would be even better,
+
+[00:09:06 -> 00:09:09]
+And the same thing would apply for complex applications,
+
+[00:09:09 -> 00:09:11]
+you can break it down into smaller tasks,
+
+[00:09:11 -> 00:09:13]
+smaller set of microservices
+
+[00:09:13 -> 00:09:15]
+and then implement first those things.
+
+[00:09:16 -> 00:09:18]
+Dynamic scalability again we have discussed
+
+[00:09:18 -> 00:09:20]
+in the previous class I think,
+
+[00:09:20 -> 00:09:23]
+but in case if you want to still like
+
+[00:09:23 -> 00:09:24]
+have a clarity on this one,
+
+[00:09:25 -> 00:09:27]
+I want to give you one example.
+
+[00:09:27 -> 00:09:29]
+Go with the same ride booking
+
+[00:09:29 -> 00:09:31]
+or maybe any e-commerce example,
+
+[00:09:31 -> 00:09:33]
+you want to kind of keep your mobile here,
+
+[00:09:34 -> 00:09:36]
+any kind e-commerce kind of an example
+
+[00:09:36 -> 00:09:39]
+and then I would say think in terms
+
+[00:09:39 -> 00:09:40]
+of the program perspective.
+
+[00:09:40 -> 00:09:42]
+I would say this is my main
+
+[00:09:42 -> 00:09:45]
+and there are function calls that I would do
+
+[00:09:45 -> 00:09:47]
+and then there are user processes
+
+[00:09:47 -> 00:09:48]
+or functions that I will write
+
+[00:09:48 -> 00:09:53]
+where I will say maybe browse for product
+
+[00:09:53 -> 00:09:56]
+Then I would say add to cart can be another,
+
+[00:09:56 -> 00:10:00]
+then I would say maybe place an order could be another.
+
+[00:10:01 -> 00:10:03]
+So what I have is all these functions
+
+[00:10:04 -> 00:10:06]
+and when I write something of this sort,
+
+[00:10:06 -> 00:10:09]
+would it fall into the category of monolithic application?
+
+[00:10:09 -> 00:10:11]
+Because everything works together,
+
+[00:10:11 -> 00:10:13]
+there is one error in one function,
+
+[00:10:13 -> 00:10:16]
+still I can't compile that as an entire application,
+
+[00:10:16 -> 00:10:16]
+make it work.
+
+[00:10:17 -> 00:10:21]
+So it has its own limitations, fine.
+
+[00:10:21 -> 00:10:23]
+Now tell me a couple of things here.
+
+[00:10:23 -> 00:10:25]
+If I look at these things,
+
+[00:10:25 -> 00:10:29]
+maybe somewhere here I would call for the browse function,
+
+[00:10:29 -> 00:10:32]
+somewhere here I would call for add to cart,
+
+[00:10:32 -> 00:10:36]
+somewhere here purchase or maybe place an order.
+
+[00:10:36 -> 00:10:38]
+So there are these calls.
+
+[00:10:39 -> 00:10:43]
+Every time any user logs in,
+
+[00:10:43 -> 00:10:46]
+all these steps are going to be utilized
+
+[00:10:46 -> 00:10:49]
+in the same set pattern, same set number,
+
+[00:10:49 -> 00:10:52]
+always start, browse one product,
+
+[00:10:52 -> 00:10:54]
+add to cart, finish placing order,
+
+[00:10:54 -> 00:10:56]
+go back, check other product.
+
+[00:10:56 -> 00:10:57]
+Does it happen that way?
+
+[00:10:58 -> 00:10:58]
+No, right?
+
+[00:10:59 -> 00:11:02]
+So that means I see so much of multi-processing,
+
+[00:11:02 -> 00:11:05]
+multi-threading that goes here, right?
+
+[00:11:05 -> 00:11:08]
+Now in case if I treat this whole thing
+
+[00:11:08 -> 00:11:10]
+as one process,
+
+[00:11:10 -> 00:11:10]
+right?
+
+[00:11:11 -> 00:11:12]
+One process.
+
+[00:11:12 -> 00:11:14]
+The amount or the number of times
+
+[00:11:15 -> 00:11:18]
+one user, one process, this program,
+
+[00:11:19 -> 00:11:21]
+the number of times this browse product
+
+[00:11:21 -> 00:11:24]
+the number of times add to cart is being called upon,
+
+[00:11:25 -> 00:11:28]
+the number of times place an order is being called upon.
+
+[00:11:28 -> 00:11:32]
+Does it differ within single session,
+
+[00:11:32 -> 00:11:34]
+user session or different sessions as well?
+
+[00:11:35 -> 00:11:36]
+Does it differ?
+
+[00:11:37 -> 00:11:37]
+Yes?
+
+[00:11:38 -> 00:11:41]
+Now if I go back to the concept of my OS,
+
+[00:11:41 -> 00:11:44]
+when I say this whole thing is one process,
+
+[00:11:45 -> 00:11:47]
+as soon as I start with the execution
+
+[00:11:47 -> 00:11:49]
+or I start running that application,
+
+[00:11:50 -> 00:11:53]
+then that process will get system resources.
+
+[00:11:53 -> 00:11:55]
+What process should I give?
+
+[00:11:55 -> 00:11:58]
+OS decides, let's say one CPU core,
+
+[00:11:58 -> 00:12:03]
+couple of memory, say some KBs, some MBs,
+
+[00:12:03 -> 00:12:04]
+that is getting allocated.
+
+[00:12:04 -> 00:12:08]
+Now with all of this, when I see these activities,
+
+[00:12:08 -> 00:12:11]
+browse product, what kind of access is prevalent,
+
+[00:12:12 -> 00:12:13]
+dominant,
+
+[00:12:13 -> 00:12:16]
+So browse product is heavy on the database read
+
+[00:12:16 -> 00:12:19]
+Right, because you need to add it to the cart.
+
+[00:12:19 -> 00:12:20]
+You need to write.
+
+[00:12:21 -> 00:12:25]
+So either database write or maybe any generic disk write,
+
+[00:12:26 -> 00:12:28]
+because you want it to be persistent.
+
+[00:12:28 -> 00:12:30]
+Then when it goes to place an order,
+
+[00:12:31 -> 00:12:32]
+again part of write will happen,
+
+[00:12:33 -> 00:12:35]
+and there will be a third party service
+
+[00:12:35 -> 00:12:38]
+in terms of making the payment and all other things.
+
+[00:12:39 -> 00:12:41]
+Right, so it requires those kind of utilities.
+
+[00:12:42 -> 00:12:45]
+Now the question, suppose one process, one user,
+
+[00:12:45 -> 00:12:50]
+there are say 50 products being browsed.
+
+[00:12:50 -> 00:12:54]
+From here maybe five gets into cart.
+
+[00:12:54 -> 00:12:57]
+From five, probably I'll add order one.
+
+[00:12:58 -> 00:13:00]
+Do I see different numbers that are coming up?
+
+[00:13:00 -> 00:13:03]
+And to keep up with that overall performance of like,
+
+[00:13:03 -> 00:13:07]
+okay, as soon as I click, I'm able to say,
+
+[00:13:07 -> 00:13:10]
+read through the item and then get it rendered
+
+[00:13:10 -> 00:13:11]
+on my display.
+
+[00:13:11 -> 00:13:13]
+I need certain amount of system resources
+
+[00:13:14 -> 00:13:16]
+to keep up with this kind of a demand.
+
+[00:13:16 -> 00:13:20]
+Then probably I need to work with the highest number,
+
+[00:13:20 -> 00:13:24]
+make sure my process resources are matching to that.
+
+[00:13:24 -> 00:13:27]
+Will I be in a position to kind of give
+
+[00:13:28 -> 00:13:31]
+how much ever resources are needed to browse 50 products
+
+[00:13:31 -> 00:13:34]
+to the browse product utility or the function?
+
+[00:13:35 -> 00:13:38]
+When it comes to say, add it to cart,
+
+[00:13:39 -> 00:13:41]
+that time how much ever resources are needed,
+
+[00:13:41 -> 00:13:43]
+only those many I should be able to use.
+
+[00:13:44 -> 00:13:47]
+Do I have that option when I look at this kind of an example?
+
+[00:13:47 -> 00:13:48]
+Can I do that?
+
+[00:13:48 -> 00:13:52]
+Or from the OS perspective, is it going to give me
+
+[00:13:52 -> 00:13:56]
+a one bunch of one bulk of resources per process?
+
+[00:13:56 -> 00:13:59]
+Within process what you do, that is up to you.
+
+[00:13:59 -> 00:14:00]
+what do you think?
+
+[00:14:01 -> 00:14:03]
+Will I be able to manage these ups and downs
+
+[00:14:03 -> 00:14:05]
+within the job, within the process?
+
+[00:14:06 -> 00:14:08]
+Will I be able to manage that effectively
+
+[00:14:08 -> 00:14:11]
+so that my resources are ultimately used?
+
+[00:14:11 -> 00:14:15]
+Because for this case, if I'm keeping higher resources
+
+[00:14:15 -> 00:14:17]
+for this one, when it goes to this use,
+
+[00:14:18 -> 00:14:20]
+I'm under utilizing my resources.
+
+[00:14:21 -> 00:14:24]
+I'm not able to use it for any other purpose also.
+
+[00:14:24 -> 00:14:28]
+Now that is where my scalability is compromised
+
+[00:14:28 -> 00:14:31]
+and with microservices, this is what
+
+[00:14:31 -> 00:14:32]
+we are aiming to achieve.
+
+[00:14:33 -> 00:14:34]
+So that is where this point comes up
+
+[00:14:34 -> 00:14:35]
+and then
+
+[00:14:36 -> 00:14:38]
+there is a separate slide deck
+
+[00:14:38 -> 00:14:39]
+or I would say two slide decks,
+
+[00:14:40 -> 00:14:43]
+one wherein we are focusing more on the REST API calls,
+
+[00:14:44 -> 00:14:47]
+probably compare them to any web service communication
+
+[00:14:47 -> 00:14:48]
+and all and there is one other slide deck
+
+[00:14:48 -> 00:14:52]
+where we are trying to understand messaging platforms
+
+[00:14:52 -> 00:14:55]
+in general, maybe put little more focus
+
+[00:14:55 -> 00:14:58]
+onto RabbitMQ architecture and Kafka to some extent.
+
+[00:14:59 -> 00:15:01]
+So those are the two things and that is where
+
+[00:15:01 -> 00:15:05]
+this slide deck, I would hold it as a background for us
+
+[00:15:05 -> 00:15:08]
+and then move for the details later.
+
+[00:15:08 -> 00:15:11]
+So now, considering this whole activity,
+
+[00:15:11 -> 00:15:12]
+now comes the question.
+
+[00:15:13 -> 00:15:15]
+We were trying to understand the differences
+
+[00:15:15 -> 00:15:17]
+between monolithic microservices.
+
+[00:15:18 -> 00:15:21]
+Why microservices are advantageous?
+
+[00:15:21 -> 00:15:23]
+So we now agree we want it.
+
+[00:15:23 -> 00:15:25]
+Next step, how to design?
+
+[00:15:26 -> 00:15:28]
+How to decide, given any application,
+
+[00:15:28 -> 00:15:31]
+how many microservices should I have, right?
+
+[00:15:31 -> 00:15:33]
+So that is where these guidelines come up.
+
+[00:15:34 -> 00:15:36]
+So we start with first thing,
+
+[00:15:36 -> 00:15:38]
+single responsibility principle,
+
+[00:15:39 -> 00:15:42]
+meaning given all these operations or the tasks
+
+[00:15:42 -> 00:15:45]
+or the sequence of the workflows that we are looking at,
+
+[00:15:45 -> 00:15:47]
+try to understand any one activity
+
+[00:15:47 -> 00:15:49]
+that is one responsibility.
+
+[00:15:49 -> 00:15:53]
+Don't like club multiple things together
+
+[00:15:53 -> 00:15:55]
+and then come up with something, right?
+
+[00:15:55 -> 00:15:58]
+So one example if I have to give you,
+
+[00:15:58 -> 00:16:02]
+how many of you remember company database
+
+[00:16:02 -> 00:16:05]
+from DBMS last year, last semester?
+
+[00:16:05 -> 00:16:07]
+Year diagram, I would say.
+
+[00:16:08 -> 00:16:12]
+Now for the year diagram, when I say employee database,
+
+[00:16:12 -> 00:16:14]
+this was the entity set
+
+[00:16:14 -> 00:16:25]
+and you had social security number, name and address, right?
+
+[00:16:26 -> 00:16:27]
+So, so many attributes.
+
+[00:16:28 -> 00:16:29]
+One quick question.
+
+[00:16:30 -> 00:16:36]
+Did we have department number as an attribute to this one?
+
+[00:16:36 -> 00:16:37]
+When you drew the year diagram,
+
+[00:16:37 -> 00:16:41]
+did we have department number as an attribute for employee?
+
+[00:16:41 -> 00:16:41]
+In
+
+[00:16:41 -> 00:16:43]
+you mapped it to the relational schema.
+
+[00:16:44 -> 00:16:47]
+You ended up adding that as a foreign key,
+
+[00:16:48 -> 00:16:51]
+but not when you designed the entity set.
+
+[00:16:51 -> 00:16:54]
+What attributes must be part of which entity set?
+
+[00:16:54 -> 00:16:56]
+Attributes must explain something,
+
+[00:16:56 -> 00:16:59]
+describe something about the entities there,
+
+[00:17:00 -> 00:17:02]
+as in department attribute
+
+[00:17:02 -> 00:17:05]
+explaining something about department,
+
+[00:17:05 -> 00:17:06]
+not about the employee.
+
+[00:17:07 -> 00:17:09]
+So we shouldn't be adding that as an attribute
+
+[00:17:09 -> 00:17:11]
+to the entity set.
+
+[00:17:12 -> 00:17:13]
+But when you mapped it,
+
+[00:17:13 -> 00:17:15]
+we ended up getting that as an attribute
+
+[00:17:15 -> 00:17:18]
+because of the foreign key mapping, right?
+
+[00:17:18 -> 00:17:21]
+So how did we actually show this part was,
+
+[00:17:21 -> 00:17:24]
+we said employee works
+
+[00:17:25 -> 00:17:26]
+Employee can work in only one department.
+
+[00:17:26 -> 00:17:28]
+One department can have many employees.
+
+[00:17:29 -> 00:17:30]
+So we ended up with this mapping
+
+[00:17:30 -> 00:17:34]
+and when you had to bring that to a relational schema,
+
+[00:17:34 -> 00:17:37]
+that time you ended up adding department number
+
+[00:17:37 -> 00:17:41]
+to be a attribute to employee as a foreign key,
+
+[00:17:41 -> 00:17:46]
+not while you designed as a year diagram, right?
+
+[00:17:46 -> 00:17:48]
+So likewise, when it comes here,
+
+[00:17:49 -> 00:17:52]
+single responsibility says you figure out one task,
+
+[00:17:53 -> 00:17:57]
+one activity, one responsibility, not more than that.
+
+[00:17:57 -> 00:17:59]
+You shouldn't be touching upon multiple things.
+
+[00:18:00 -> 00:18:03]
+You should maintain one state, one task,
+
+[00:18:03 -> 00:18:05]
+and then you just leave it at that.
+
+[00:18:05 -> 00:18:09]
+That would be the first criteria or a guideline for us.
+
+[00:18:09 -> 00:18:12]
+Then how to model, think about the business,
+
+[00:18:12 -> 00:18:15]
+the activities, the processes, the authentications,
+
+[00:18:16 -> 00:18:18]
+or maybe the privileges that you want to keep up.
+
+[00:18:18 -> 00:18:21]
+So go through the business or the domain as such,
+
+[00:18:22 -> 00:18:23]
+how it works, the application,
+
+[00:18:23 -> 00:18:27]
+and then bring those criteria as your protocols
+
+[00:18:27 -> 00:18:28]
+or restrictions.
+
+[00:18:28 -> 00:18:30]
+You will have to abide by those.
+
+[00:18:31 -> 00:18:33]
+Then isolate failure.
+
+[00:18:33 -> 00:18:36]
+If I want to keep single responsibility,
+
+[00:18:36 -> 00:18:38]
+then isolation will by default come up.
+
+[00:18:39 -> 00:18:41]
+But again, if this is not helping enough,
+
+[00:18:42 -> 00:18:44]
+you still are confused whether it is single responsibility,
+
+[00:18:45 -> 00:18:47]
+then come down and check whether your failures
+
+[00:18:47 -> 00:18:50]
+are isolated or not, right?
+
+[00:18:50 -> 00:18:55]
+So if suppose browse product is one function,
+
+[00:18:55 -> 00:18:57]
+add to cart is one function.
+
+[00:18:57 -> 00:18:59]
+Suppose by doing add to cart,
+
+[00:18:59 -> 00:19:01]
+if I am disturbing the product display
+
+[00:19:01 -> 00:19:04]
+or the complete repository of your product,
+
+[00:19:05 -> 00:19:07]
+then my isolations are dependent.
+
+[00:19:07 -> 00:19:11]
+There is one kind of a connected effect that I am having.
+
+[00:19:11 -> 00:19:13]
+So you need to then again isolate those.
+
+[00:19:14 -> 00:19:17]
+That probably will yield to further more,
+
+[00:19:17 -> 00:19:20]
+few more microservices as well, right?
+
+[00:19:20 -> 00:19:22]
+So apply these principles and see whether you are able
+
+[00:19:22 -> 00:19:24]
+to achieve these guidelines.
+
+[00:19:24 -> 00:19:27]
+Then infrastructure automation deploy independently.
+
+[00:19:27 -> 00:19:32]
+So with all these concept of smaller components
+
+[00:19:32 -> 00:19:36]
+or microservices, we want one level of automation,
+
+[00:19:36 -> 00:19:40]
+one level of independence and continuous deployment as well.
+
+[00:19:40 -> 00:19:44]
+So somewhere, I don't know how far CICD pipeline
+
+[00:19:44 -> 00:19:46]
+was working as part of CAC.
+
+[00:19:46 -> 00:19:48]
+Complete CICD pipeline you have designed,
+
+[00:19:49 -> 00:19:49]
+built and implemented,
+
+[00:19:50 -> 00:19:50]
+okay?
+
+[00:19:50 -> 00:19:55]
+So basically using GitHub and GitHub actions, okay?
+
+[00:19:55 -> 00:19:57]
+Deployment level it didn't go to.
+
+[00:19:57 -> 00:19:59]
+Okay, fine, sure.
+
+[00:19:59 -> 00:20:02]
+So this one we would say will cover all those things
+
+[00:20:03 -> 00:20:06]
+and that is where we want this kind of automated steps
+
+[00:20:06 -> 00:20:08]
+that are to help us, right?
+
+[00:20:09 -> 00:20:10]
+So we'll try to have one lab
+
+[00:20:10 -> 00:20:13]
+where we'll try to bring these things.
+
+[00:20:14 -> 00:20:16]
+Another example is added to our slide deck
+
+[00:20:16 -> 00:20:20]
+and we are trying to see Twitter examples.
+
+[00:20:21 -> 00:20:22]
+Earlier one we were looking at
+
+[00:20:22 -> 00:20:25]
+in terms of your right booking.
+
+[00:20:25 -> 00:20:28]
+Similarly, if I want to understand the tweets,
+
+[00:20:28 -> 00:20:32]
+retweets, posts that are handled per user
+
+[00:20:32 -> 00:20:34]
+and visibility, who follows whom,
+
+[00:20:34 -> 00:20:38]
+all of those if I want to bring in couple of use cases
+
+[00:20:38 -> 00:20:39]
+are shown here.
+
+[00:20:39 -> 00:20:41]
+That is again a typical example
+
+[00:20:41 -> 00:20:44]
+to understand the microservices in general.
+
+[00:20:44 -> 00:20:48]
+So okay, I would say this diagram is helpful for us
+
+[00:20:48 -> 00:20:50]
+or maybe the table is helpful for us
+
+[00:20:50 -> 00:20:52]
+where we are trying to see the difference
+
+[00:20:52 -> 00:20:55]
+between microservices and service-oriented architecture.
+
+[00:20:57 -> 00:20:59]
+So among the two, try to read through
+
+[00:21:00 -> 00:21:01]
+what makes the difference,
+
+[00:21:02 -> 00:21:04]
+Okay, so service-oriented architecture,
+
+[00:21:04 -> 00:21:07]
+there is one major difference that comes up is this.
+
+[00:21:07 -> 00:21:10]
+As much as possible, share as little as possible.
+
+[00:21:10 -> 00:21:12]
+So share as little as possible,
+
+[00:21:12 -> 00:21:17]
+your critical sections are going to be smaller and smaller.
+
+[00:21:17 -> 00:21:20]
+So as much as possible,
+
+[00:21:20 -> 00:21:21]
+there will be like so many things
+
+[00:21:21 -> 00:21:22]
+that will be shared across.
+
+[00:21:23 -> 00:21:25]
+Can be the database, can be the process,
+
+[00:21:25 -> 00:21:27]
+can be environment variables,
+
+[00:21:27 -> 00:21:28]
+whatever you want to set it up as.
+
+[00:21:29 -> 00:21:30]
+So those are shared.
+
+[00:21:31 -> 00:21:33]
+And if you are looking at shared environments
+
+[00:21:33 -> 00:21:35]
+or shared resources,
+
+[00:21:35 -> 00:21:38]
+major challenge comes up is in terms of synchronization.
+
+[00:21:38 -> 00:21:40]
+If you share too many things,
+
+[00:21:40 -> 00:21:42]
+you need to keep up with synchronizing
+
+[00:21:42 -> 00:21:44]
+always when there are parallel accesses.
+
+[00:21:44 -> 00:21:47]
+If you share as less as possible,
+
+[00:21:47 -> 00:21:50]
+running them independently in parallel
+
+[00:21:50 -> 00:21:51]
+becomes much more easier.
+
+[00:21:52 -> 00:21:53]
+So that is where the first point
+
+[00:21:53 -> 00:21:56]
+makes a very strong impact, I would say.
+
+[00:21:57 -> 00:21:59]
+And rest of the things is
+
+[00:21:59 -> 00:22:00]
+responsibility.
+
+[00:22:00 -> 00:22:02]
+Run it as single thread, single task.
+
+[00:22:03 -> 00:22:05]
+It is more multi-threaded here.
+
+[00:22:05 -> 00:22:07]
+So there are other differences as well.
+
+[00:22:07 -> 00:22:12]
+So cloud architecture, not much there in that.
+
+[00:22:13 -> 00:22:15]
+But then we have some things.
+
+[00:22:15 -> 00:22:17]
+So we'll probably go with them together.
+
+[00:22:18 -> 00:22:20]
+Cloud architecture, deployment models,
+
+[00:22:21 -> 00:22:22]
+private, public, hybrid,
+
+[00:22:22 -> 00:22:25]
+and more pointers to that is part of this.
+
+[00:22:25 -> 00:22:28]
+So these two I want to take together.
+
+[00:22:28 -> 00:22:31]
+major things where I want you to focus
+
+[00:22:31 -> 00:22:36]
+are coming in on rest, WS, web services.
+
+[00:22:37 -> 00:22:39]
+How much you feel comfortable with rest?
+
+[00:22:39 -> 00:22:42]
+If that is the case, probably I will start with rest first
+
+[00:22:43 -> 00:22:45]
+so that you can rest and relax.
+
+[00:22:45 -> 00:22:46]
+we'll see.
+
+[00:22:46 -> 00:22:50]
+And continuation to that, I want to go with message queues.
+
+[00:22:50 -> 00:22:53]
+So that is where I want to take these together
+
+[00:22:53 -> 00:22:54]
+or
+
+[00:22:54 -> 00:22:57]
+there is one slide deck for microservice migration.
+
+[00:22:58 -> 00:23:00]
+Which one you want me to take first?
+
+[00:23:00 -> 00:23:02]
+So I'm giving you a choice,
+
+[00:23:03 -> 00:23:04]
+which one we want to go for first?
+
+[00:23:05 -> 00:23:06]
+If you don't raise your hand,
+
+[00:23:06 -> 00:23:08]
+I will count you to the other option.
+
+[00:23:09 -> 00:23:10]
+I'm not asking second option.
+
+[00:23:12 -> 00:23:13]
+You need to decide quickly
+
+[00:23:13 -> 00:23:15]
+whether you want to raise your hand or not.
+
+[00:23:15 -> 00:23:17]
+session we have looked at synchronous communication
+
+[00:23:17 -> 00:23:20]
+or asynchronous communication, right?
+
+[00:23:20 -> 00:23:25]
+Now, both of these are again looking at kind of activities
+
+[00:23:25 -> 00:23:28]
+which basically require some kind of communication.
+
+[00:23:29 -> 00:23:34]
+Now rest API calls again are based on communication models.
+
+[00:23:35 -> 00:23:38]
+Now if I want to go specifically into the details,
+
+[00:23:39 -> 00:23:41]
+rest implementation will be considered
+
+[00:23:41 -> 00:23:43]
+into the category of synchronous or asynchronous.
+
+[00:23:43 -> 00:23:46]
+Now, quickly to put pointers.
+
+[00:23:47 -> 00:23:48]
+If it is synchronous,
+
+[00:23:48 -> 00:23:53]
+producer gets blocked, it has to wait for the response
+
+[00:23:53 -> 00:23:54]
+Once you see the acknowledgement,
+
+[00:23:54 -> 00:23:57]
+then you will unblock and then continue.
+
+[00:23:57 -> 00:23:59]
+There is a wait time here.
+
+[00:23:59 -> 00:24:00]
+Yes.
+
+[00:24:00 -> 00:24:03]
+What things are visible here?
+
+[00:24:04 -> 00:24:05]
+Couple of things.
+
+[00:24:06 -> 00:24:08]
+Producer to consumer, there is a direct connection
+
+[00:24:08 -> 00:24:12]
+and the acknowledgement from consumer
+
+[00:24:12 -> 00:24:14]
+comes back to the producer.
+
+[00:24:14 -> 00:24:17]
+Now these things you might feel like I know all of this,
+
+[00:24:17 -> 00:24:19]
+why it is being repeated.
+
+[00:24:19 -> 00:24:22]
+Why I'll tell you because once we start moving on
+
+[00:24:22 -> 00:24:26]
+towards message queues, these pointers still comes back
+
+[00:24:26 -> 00:24:28]
+and if we do not know where all it differs,
+
+[00:24:28 -> 00:24:30]
+we will easily get confused.
+
+[00:24:30 -> 00:24:33]
+Just to kind of give you a heads up there,
+
+[00:24:33 -> 00:24:36]
+all your MCQs, why they sound so similar
+
+[00:24:36 -> 00:24:38]
+or so confusing is because of these things.
+
+[00:24:39 -> 00:24:41]
+You need to really be careful in reading
+
+[00:24:41 -> 00:24:44]
+what is given, understand what it is.
+
+[00:24:44 -> 00:24:47]
+Now that reminds me to ask you one very weird
+
+[00:24:47 -> 00:24:50]
+and not so very good question.
+
+[00:24:51 -> 00:24:55]
+How many of you really believe that among the MCQs,
+
+[00:24:55 -> 00:24:58]
+the longest option is the correct answer always?
+
+[00:24:58 -> 00:25:02]
+I don't know how that hypothesis came up
+
+[00:25:02 -> 00:25:05]
+and how did you prove it, I don't know that part
+
+[00:25:05 -> 00:25:08]
+but please do not go by that here.
+
+[00:25:08 -> 00:25:11]
+Please put your focus, look at what it is saying,
+
+[00:25:11 -> 00:25:15]
+read the English and understand that before you answer.
+
+[00:25:16 -> 00:25:17]
+Anyways, now coming back to this,
+
+[00:25:18 -> 00:25:21]
+this is what we mean by this activity.
+
+[00:25:21 -> 00:25:25]
+normally are you labeled very talkative class?
+
+[00:25:25 -> 00:25:28]
+Only for me it is a special then.
+
+[00:25:28 -> 00:25:31]
+If not done so far, then probably this semester
+
+[00:25:31 -> 00:25:33]
+I am going to make it publicized
+
+[00:25:34 -> 00:25:36]
+based on my experience in class.
+
+[00:25:36 -> 00:25:39]
+So far what we discussed, we understand
+
+[00:25:39 -> 00:25:40]
+there should be some kind of communication.
+
+[00:25:41 -> 00:25:42]
+For all the communications,
+
+[00:25:43 -> 00:25:46]
+should we have a standard way of doing it?
+
+[00:25:46 -> 00:25:49]
+Now that standard comes in these varieties, right?
+
+[00:25:49 -> 00:25:54]
+So again, you would have heard, I would say agree to that.
+
+[00:25:54 -> 00:25:57]
+REST is not to be a, what I say,
+
+[00:25:57 -> 00:26:00]
+it is more like a messaging platform
+
+[00:26:00 -> 00:26:02]
+or it's a way of communication,
+
+[00:26:02 -> 00:26:06]
+not exactly a protocol to follow, right?
+
+[00:26:06 -> 00:26:11]
+So if I go by that, what needs to be understood
+
+[00:26:11 -> 00:26:13]
+is a couple of pointers.
+
+[00:26:14 -> 00:26:17]
+So we are looking at REST, right?
+
+[00:26:17 -> 00:26:21]
+And whichever APIs follow the methods of REST
+
+[00:26:21 -> 00:26:25]
+for communication, you can call them as RESTful APIs.
+
+[00:26:25 -> 00:26:27]
+Not all of them are RESTful.
+
+[00:26:28 -> 00:26:30]
+So you need to have a couple more features
+
+[00:26:30 -> 00:26:33]
+or maybe specific requirements
+
+[00:26:33 -> 00:26:36]
+which needs to be satisfied to call it as RESTful.
+
+[00:26:36 -> 00:26:39]
+There can be non-REST aligned
+
+[00:26:39 -> 00:26:43]
+or non-REST compliant kind of communications as well, right?
+
+[00:26:44 -> 00:26:47]
+Or maybe one typical question,
+
+[00:26:47 -> 00:26:51]
+can be a HTTP request, yes or no?
+
+[00:26:52 -> 00:26:56]
+Yes, all HTTP requests are RESTful.
+
+[00:26:56 -> 00:26:58]
+That is where the difference is.
+
+[00:26:59 -> 00:27:03]
+No is the right answer for that which you got there.
+
+[00:27:03 -> 00:27:04]
+now I do not know
+
+[00:27:04 -> 00:27:07]
+whether these things are already like done for you,
+
+[00:27:07 -> 00:27:09]
+repeated anywhere, other course,
+
+[00:27:09 -> 00:27:13]
+but still we need to have these clarity for our course.
+
+[00:27:13 -> 00:27:15]
+So we are going to go ahead with that anyway.
+
+[00:27:16 -> 00:27:18]
+So these are considered as mandatory constraints
+
+[00:27:18 -> 00:27:23]
+or principles for designing any RESTful system.
+
+[00:27:23 -> 00:27:25]
+So what are those rules?
+
+[00:27:25 -> 00:27:27]
+First thing says client server constraint
+
+[00:27:27 -> 00:27:29]
+where you need to separate out
+
+[00:27:29 -> 00:27:31]
+what is going into the client side,
+
+[00:27:31 -> 00:27:33]
+what is to be there on the server side.
+
+[00:27:33 -> 00:27:35]
+Why I need to make these differentiations?
+
+[00:27:36 -> 00:27:38]
+Isolating the responsibilities.
+
+[00:27:38 -> 00:27:40]
+Also, it will give me a clarity
+
+[00:27:40 -> 00:27:42]
+on what is expected from the client,
+
+[00:27:42 -> 00:27:44]
+what is expected from the server.
+
+[00:27:45 -> 00:27:47]
+So you try to separate it out.
+
+[00:27:48 -> 00:27:51]
+And then it goes with one more requirement
+
+[00:27:51 -> 00:27:53]
+wherein we are looking at it as a stateless constraint.
+
+[00:27:54 -> 00:27:55]
+What do you mean by stateless?
+
+[00:27:55 -> 00:27:58]
+There is no history or there is no continuity needed
+
+[00:27:58 -> 00:27:59]
+from the previous communication.
+
+[00:28:00 -> 00:28:02]
+If I say to do lab two,
+
+[00:28:02 -> 00:28:05]
+you need to have lab one component up and running.
+
+[00:28:06 -> 00:28:07]
+It is stateful.
+
+[00:28:08 -> 00:28:11]
+If I say every lab is standalone activity,
+
+[00:28:11 -> 00:28:14]
+then that is stateless, right?
+
+[00:28:14 -> 00:28:17]
+And then all the REST APIs or the communication
+
+[00:28:17 -> 00:28:19]
+that goes across are typically stateless
+
+[00:28:20 -> 00:28:22]
+because we do not want that kind of a dependency
+
+[00:28:22 -> 00:28:25]
+or a legacy where I have to remember too many details,
+
+[00:28:25 -> 00:28:26]
+too many things.
+
+[00:28:27 -> 00:28:29]
+Even when there is any request coming to the server,
+
+[00:28:29 -> 00:28:32]
+the server shouldn't be having anything to remember.
+
+[00:28:32 -> 00:28:35]
+What was asked before and what should I do now?
+
+[00:28:36 -> 00:28:38]
+There shouldn't be a connectivity, right?
+
+[00:28:38 -> 00:28:41]
+So that is what comes up in the stateless constraint.
+
+[00:28:42 -> 00:28:44]
+And then cache constraint says,
+
+[00:28:44 -> 00:28:47]
+should the user be allowed or permitted
+
+[00:28:47 -> 00:28:48]
+to cache any answer?
+
+[00:28:49 -> 00:28:51]
+It is for the client-side caching, right?
+
+[00:28:52 -> 00:28:55]
+So now some places where the, what I say,
+
+[00:28:55 -> 00:28:58]
+the real-time response is very critical.
+
+[00:28:58 -> 00:29:01]
+Accuracy of the response is very critical,
+
+[00:29:01 -> 00:29:04]
+meaning I shouldn't be having anything cached.
+
+[00:29:05 -> 00:29:08]
+If suppose I'm looking at patient data
+
+[00:29:08 -> 00:29:12]
+and I'm monitoring the sugar levels, let's imagine, right?
+
+[00:29:12 -> 00:29:15]
+If your cache constraint is enabled, what can happen?
+
+[00:29:15 -> 00:29:19]
+Current entry or the current reading for my sugar level,
+
+[00:29:19 -> 00:29:20]
+I'm missing out.
+
+[00:29:20 -> 00:29:22]
+Server is not able to kind of pick it up.
+
+[00:29:23 -> 00:29:26]
+Then the client, is it caching it from the previous entry?
+
+[00:29:26 -> 00:29:28]
+Maybe one hour before there was some reading.
+
+[00:29:29 -> 00:29:31]
+You did cache it and use it.
+
+[00:29:31 -> 00:29:33]
+But that might be a wrong reading.
+
+[00:29:33 -> 00:29:37]
+And it is not kind of good to go ahead with the wrong reading
+
+[00:29:37 -> 00:29:39]
+when there are health parameters
+
+[00:29:39 -> 00:29:42]
+which have a time-sensitive nature.
+
+[00:29:42 -> 00:29:44]
+Then again, you do have an option
+
+[00:29:44 -> 00:29:47]
+whether to disable that caching constraint.
+
+[00:29:47 -> 00:29:50]
+If you enable, like say I want to understand
+
+[00:29:50 -> 00:29:52]
+what's the day temperature today.
+
+[00:29:53 -> 00:29:55]
+Maybe I'm again looking at morning temperature,
+
+[00:29:56 -> 00:29:58]
+afternoon temperature, evening temperature.
+
+[00:29:58 -> 00:30:01]
+If I don't get any update, then I'm okay to go ahead
+
+[00:30:01 -> 00:30:05]
+with maybe an approximated value from my previous reading.
+
+[00:30:05 -> 00:30:09]
+Then you are free to cache the value, reuse it.
+
+[00:30:09 -> 00:30:11]
+So there are typical examples where it is fine,
+
+[00:30:11 -> 00:30:13]
+where it is not so very fine.
+
+[00:30:13 -> 00:30:16]
+So you will again have to make a decision on that
+
+[00:30:16 -> 00:30:18]
+about the caching aspect.
+
+[00:30:18 -> 00:30:21]
+Remember, we are looking at the mandatory principles
+
+[00:30:21 -> 00:30:24]
+or the constraints, how to design any rest system.
+
+[00:30:24 -> 00:30:26]
+Among those, we looked at those parameters
+
+[00:30:26 -> 00:30:29]
+and now we are looking at uniform interface constraint.
+
+[00:30:29 -> 00:30:33]
+This is one major pointer which has so many sub-points.
+
+[00:30:33 -> 00:30:37]
+So for all of these things, this is for uniform interface.
+
+[00:30:38 -> 00:30:40]
+How to make your interface look uniform?
+
+[00:30:41 -> 00:30:43]
+Go with a standard representation, work with it.
+
+[00:30:44 -> 00:30:47]
+Any get request that I'm looking at should be uniform.
+
+[00:30:47 -> 00:30:50]
+Doesn't matter whether I'm trying to get a PDF file,
+
+[00:30:50 -> 00:30:52]
+I'm trying to get a image file,
+
+[00:30:52 -> 00:30:53]
+I'm trying to get a text file.
+
+[00:30:54 -> 00:30:55]
+Shouldn't matter, right?
+
+[00:30:55 -> 00:30:58]
+So I want to kind of work with a uniform interface.
+
+[00:30:59 -> 00:31:02]
+Content shouldn't actually influence, okay?
+
+[00:31:02 -> 00:31:03]
+So go ahead with that, keep this open.
+
+[00:31:04 -> 00:31:07]
+We'll go back to that further descriptions of all of these
+
+[00:31:07 -> 00:31:09]
+in the following slides.
+
+[00:31:09 -> 00:31:12]
+Layered system constraint, we are trying to kind of again
+
+[00:31:12 -> 00:31:15]
+go with the same expectation of isolation.
+
+[00:31:16 -> 00:31:19]
+If you are layering it up, then layer wise,
+
+[00:31:19 -> 00:31:23]
+if there are issues, bugs, it shouldn't affect the others,
+
+[00:31:23 -> 00:31:24]
+right?
+
+[00:31:24 -> 00:31:27]
+And we wanted the whole interface to be uniform.
+
+[00:31:28 -> 00:31:32]
+Now tell me, how far should we agree to this
+
+[00:31:32 -> 00:31:33]
+or should not agree to this?
+
+[00:31:34 -> 00:31:35]
+the request is going through.
+
+[00:31:36 -> 00:31:39]
+Does it differ when you work it out from your home network,
+
+[00:31:39 -> 00:31:41]
+when you work it through PESO Wi-Fi?
+
+[00:31:42 -> 00:31:43]
+The layers, do they differ?
+
+[00:31:43 -> 00:31:46]
+The number of firewall settings that you do have,
+
+[00:31:46 -> 00:31:47]
+do they differ?
+
+[00:31:48 -> 00:31:48]
+Yes.
+
+[00:31:49 -> 00:31:51]
+On Windows, there is a default firewall setting
+
+[00:31:51 -> 00:31:53]
+that is there in your system.
+
+[00:31:53 -> 00:31:54]
+Have you observed that?
+
+[00:31:55 -> 00:31:58]
+You do have an option to disable, enable that as well, right?
+
+[00:31:58 -> 00:32:01]
+So that will be the first layer of protection, I would say.
+
+[00:32:02 -> 00:32:04]
+After that, you will connect to say PESO Wi-Fi
+
+[00:32:04 -> 00:32:08]
+and then from PESO, again you do have all the proxy server
+
+[00:32:08 -> 00:32:09]
+setups that are there.
+
+[00:32:09 -> 00:32:12]
+Now from there, the request will go out
+
+[00:32:13 -> 00:32:16]
+and then finally AWS will receive it.
+
+[00:32:16 -> 00:32:18]
+Now from the AWS perspective,
+
+[00:32:18 -> 00:32:21]
+all these requests that are going out from PES
+
+[00:32:21 -> 00:32:23]
+are taken from single IP,
+
+[00:32:24 -> 00:32:26]
+even though there are different machines
+
+[00:32:26 -> 00:32:28]
+that are there within the organization.
+
+[00:32:28 -> 00:32:32]
+Now those things, what we finally want to say is,
+
+[00:32:32 -> 00:32:35]
+how many layers are there playing a role
+
+[00:32:35 -> 00:32:37]
+in the overall communication?
+
+[00:32:38 -> 00:32:42]
+All of these things, should they be affecting my interface,
+
+[00:32:42 -> 00:32:44]
+the API or that overall user interface?
+
+[00:32:45 -> 00:32:47]
+Or should it be same?
+
+[00:32:47 -> 00:32:48]
+It should be same.
+
+[00:32:48 -> 00:32:52]
+That is where we want to standardize the methods, right?
+
+[00:32:52 -> 00:32:55]
+So it shouldn't matter whether I do have additional firewall
+
+[00:32:55 -> 00:32:58]
+coming up or whether I do have this or not.
+
+[00:32:58 -> 00:33:01]
+Any load balancer is part of the system setup.
+
+[00:33:01 -> 00:33:04]
+Irrespective of all of these things,
+
+[00:33:04 -> 00:33:08]
+my rest calls should behave the same, should look the same.
+
+[00:33:08 -> 00:33:13]
+Usage wise, I should use the same signature or prototype.
+
+[00:33:13 -> 00:33:16]
+Now that is what we mean by layered system constraints.
+
+[00:33:16 -> 00:33:18]
+So we want to have this one.
+
+[00:33:18 -> 00:33:22]
+So that adding or removing any layers
+
+[00:33:22 -> 00:33:24]
+shouldn't be affecting your overall solution
+
+[00:33:24 -> 00:33:26]
+that you have designed, right?
+
+[00:33:26 -> 00:33:29]
+So those are the things that we want to have.
+
+[00:33:29 -> 00:33:31]
+Now, among the uniform interface constraint,
+
+[00:33:32 -> 00:33:33]
+we said there are so many things.
+
+[00:33:34 -> 00:33:36]
+So quickly tell me what do you understand
+
+[00:33:37 -> 00:33:38]
+from each of these.
+
+[00:33:39 -> 00:33:40]
+Resource identification,
+
+[00:33:41 -> 00:33:43]
+There is no, what is that period in nursery?
+
+[00:33:44 -> 00:33:45]
+Montessori?
+
+[00:33:45 -> 00:33:46]
+Head on the desk?
+
+[00:33:46 -> 00:33:48]
+There will be one period for that, right?
+
+[00:33:49 -> 00:33:52]
+Probably before going home, probably after lunch,
+
+[00:33:52 -> 00:33:52]
+I don't know.
+
+[00:33:53 -> 00:33:56]
+But unfortunately, we do not have such timetable, right?
+
+[00:33:56 -> 00:33:59]
+Even if somebody is not well, they have to
+
+[00:33:59 -> 00:34:01]
+meaning at least stay upright.
+
+[00:34:01 -> 00:34:05]
+Internally, I don't have a way to kind of go
+
+[00:34:05 -> 00:34:07]
+into your brain and sit there, right?
+
+[00:34:07 -> 00:34:09]
+Or keep that speaker within your brain.
+
+[00:34:09 -> 00:34:10]
+That I can't do.
+
+[00:34:10 -> 00:34:12]
+But then again, there are only some things
+
+[00:34:12 -> 00:34:14]
+that I can ignore or pretend to ignore.
+
+[00:34:14 -> 00:34:16]
+Beyond that, I can't.
+
+[00:34:16 -> 00:34:18]
+If you want, I can keep some scenarios
+
+[00:34:18 -> 00:34:20]
+and do low and all of that.
+
+[00:34:20 -> 00:34:21]
+That I can assure.
+
+[00:34:21 -> 00:34:25]
+So first thing comes up for this whole of the discussion
+
+[00:34:25 -> 00:34:28]
+is through resource and resource identification.
+
+[00:34:28 -> 00:34:29]
+What do we mean by this?
+
+[00:34:30 -> 00:34:31]
+What are resources?
+
+[00:34:31 -> 00:34:34]
+What are those resource identifications?
+
+[00:34:34 -> 00:34:38]
+Data required to complete the request or rather than that,
+
+[00:34:38 -> 00:34:43]
+I would say in the mechanism of this communication,
+
+[00:34:43 -> 00:34:46]
+Meaning, if I go back to the example,
+
+[00:34:46 -> 00:34:50]
+then I do see resource, what are the resources
+
+[00:34:50 -> 00:34:55]
+when I looked at that user example for the products
+
+[00:34:55 -> 00:34:57]
+and then ordering product something, right?
+
+[00:34:58 -> 00:35:00]
+So what are the resources there?
+
+[00:35:00 -> 00:35:01]
+User ID.
+
+[00:35:01 -> 00:35:03]
+And then product, is it a resource?
+
+[00:35:04 -> 00:35:04]
+Yes.
+
+[00:35:05 -> 00:35:07]
+It's separate for each user.
+
+[00:35:08 -> 00:35:09]
+Isolation.
+
+[00:35:09 -> 00:35:13]
+It might be hosted onto the same database, same disk space.
+
+[00:35:13 -> 00:35:18]
+But I treat it as one card, one user, right?
+
+[00:35:18 -> 00:35:21]
+Now, to make matters even more interesting,
+
+[00:35:22 -> 00:35:26]
+how many of you would have had like Amazon Prime account
+
+[00:35:26 -> 00:35:28]
+shared across family members?
+
+[00:35:28 -> 00:35:33]
+Two parents, two kids, four logins, four mobiles,
+
+[00:35:33 -> 00:35:36]
+everybody looking at the card there.
+
+[00:35:37 -> 00:35:39]
+Somebody says, I have added this to card,
+
+[00:35:39 -> 00:35:41]
+you check the review ratings.
+
+[00:35:41 -> 00:35:44]
+Somebody will say, size is not the one that we want
+
+[00:35:44 -> 00:35:45]
+and then they want to change the size.
+
+[00:35:45 -> 00:35:47]
+All of them happen in parallel.
+
+[00:35:48 -> 00:35:50]
+Now, how many cards are we talking about?
+
+[00:35:50 -> 00:35:52]
+How many login sessions are we talking about?
+
+[00:35:53 -> 00:35:56]
+Same user, same user, multiple browsers.
+
+[00:35:57 -> 00:35:58]
+Because if it is different account,
+
+[00:35:58 -> 00:36:00]
+then you are not sharing the card,
+
+[00:36:00 -> 00:36:01]
+right?
+
+[00:36:02 -> 00:36:05]
+Then those are the things that you need to manage, manipulate.
+
+[00:36:05 -> 00:36:08]
+But either way, comes down to everything
+
+[00:36:08 -> 00:36:10]
+to be treated as a resource.
+
+[00:36:10 -> 00:36:12]
+Everything needs to be identified,
+
+[00:36:13 -> 00:36:13]
+right?
+
+[00:36:13 -> 00:36:15]
+So those are this first part.
+
+[00:36:15 -> 00:36:17]
+We'll try to see what all we could add there.
+
+[00:36:18 -> 00:36:20]
+Then, manipulation of these resources
+
+[00:36:20 -> 00:36:22]
+through representations, right?
+
+[00:36:23 -> 00:36:25]
+Now, where it differs are,
+
+[00:36:25 -> 00:36:27]
+I don't know if we have any,
+
+[00:36:27 -> 00:36:30]
+Okay, probably I'll stick with this example
+
+[00:36:30 -> 00:36:32]
+and we will try to kind of look at
+
+[00:36:33 -> 00:36:33]
+this example
+
+[00:36:33 -> 00:36:35]
+that I wrote on the board.
+
+[00:36:35 -> 00:36:39]
+We were seeing browse product as a function name
+
+[00:36:40 -> 00:36:43]
+and maybe add to cart as a function name,
+
+[00:36:44 -> 00:36:46]
+as a task, as a process, right?
+
+[00:36:46 -> 00:36:48]
+That was more like a procedure.
+
+[00:36:48 -> 00:36:50]
+Now, look at in this way.
+
+[00:36:50 -> 00:36:53]
+What we are trying to do here is we say that,
+
+[00:36:53 -> 00:36:55]
+okay, there are light resources,
+
+[00:36:56 -> 00:36:58]
+light spans, all of these, right?
+
+[00:36:58 -> 00:37:00]
+So, how many are there?
+
+[00:37:00 -> 00:37:03]
+I can count them, right?
+
+[00:37:03 -> 00:37:05]
+And then if you have realized
+
+[00:37:05 -> 00:37:08]
+There are probably one or two
+
+[00:37:08 -> 00:37:10]
+and then too long there is no activity.
+
+[00:37:10 -> 00:37:13]
+I don't think anybody's really sitting
+
+[00:37:13 -> 00:37:14]
+that still in the class.
+
+[00:37:15 -> 00:37:17]
+I have realized that in couple of classes
+
+[00:37:17 -> 00:37:19]
+where, which class I won't tell.
+
+[00:37:20 -> 00:37:22]
+But then there was one particular class
+
+[00:37:22 -> 00:37:24]
+where in between particular one,
+
+[00:37:25 -> 00:37:26]
+these one or these one,
+
+[00:37:26 -> 00:37:28]
+two lights would switch off.
+
+[00:37:29 -> 00:37:30]
+Then they would switch on.
+
+[00:37:31 -> 00:37:32]
+And then I was like confused, why?
+
+[00:37:33 -> 00:37:35]
+And then somebody told these are sensor-activated
+
+[00:37:35 -> 00:37:38]
+and if there is no movement at all for a duration,
+
+[00:37:38 -> 00:37:39]
+the lights will go off.
+
+[00:37:40 -> 00:37:42]
+And then I realized there is no movement
+
+[00:37:42 -> 00:37:44]
+at all from the desk then.
+
+[00:37:44 -> 00:37:46]
+Here now I don't think that is happening
+
+[00:37:46 -> 00:37:47]
+anytime soon.
+
+[00:37:48 -> 00:37:52]
+But anyways, what we are trying to kind of say here is
+
+[00:37:52 -> 00:37:57]
+whatever resources you map will get an identification.
+
+[00:37:57 -> 00:37:58]
+There is an identity.
+
+[00:37:59 -> 00:38:01]
+There also you do have, right?
+
+[00:38:01 -> 00:38:05]
+Fan one, fan two, there is this identity.
+
+[00:38:05 -> 00:38:07]
+The connection that is there from the switch
+
+[00:38:07 -> 00:38:09]
+to the particular resource.
+
+[00:38:10 -> 00:38:12]
+Now likewise, we would say that okay,
+
+[00:38:13 -> 00:38:15]
+there is this whole path that comes up
+
+[00:38:16 -> 00:38:18]
+which is your access path.
+
+[00:38:19 -> 00:38:22]
+Say Pesu, B block, ground floor, seminar hall
+
+[00:38:23 -> 00:38:26]
+and maybe this is my board place that I do have.
+
+[00:38:27 -> 00:38:28]
+And there there is this light.
+
+[00:38:28 -> 00:38:31]
+How many lights are there connected with this space?
+
+[00:38:32 -> 00:38:33]
+Then there is one, two, three.
+
+[00:38:33 -> 00:38:37]
+So I will say one, slash one, slash two, slash three.
+
+[00:38:38 -> 00:38:40]
+Now this is supposed to be the resource naming.
+
+[00:38:40 -> 00:38:42]
+Anytime you want to download,
+
+[00:38:42 -> 00:38:45]
+suppose there is an open source book available, PDF,
+
+[00:38:46 -> 00:38:49]
+that is available that I could download, right?
+
+[00:38:49 -> 00:38:51]
+When you want to download that,
+
+[00:38:51 -> 00:38:53]
+is there this kind of a sequence that comes up
+
+[00:38:53 -> 00:38:56]
+which says textbook.pdf or something?
+
+[00:38:56 -> 00:38:57]
+Yes?
+
+[00:38:57 -> 00:39:01]
+So that is the way you will put up a resource identification.
+
+[00:39:01 -> 00:39:05]
+Every resource that is there out, you need to identify.
+
+[00:39:06 -> 00:39:08]
+That is where the naming sequence comes up, okay?
+
+[00:39:08 -> 00:39:10]
+So you do have the resource.
+
+[00:39:10 -> 00:39:13]
+Every resource we say there are typical operations
+
+[00:39:13 -> 00:39:14]
+that I can do, right?
+
+[00:39:14 -> 00:39:15]
+Not beyond that.
+
+[00:39:16 -> 00:39:17]
+Now what are those?
+
+[00:39:18 -> 00:39:22]
+We do have these standard way of manipulating them.
+
+[00:39:22 -> 00:39:24]
+Now these are your requests.
+
+[00:39:24 -> 00:39:27]
+It can be a get request, put, post, or delete.
+
+[00:39:28 -> 00:39:29]
+Only four.
+
+[00:39:29 -> 00:39:31]
+There is no fifth option, right?
+
+[00:39:32 -> 00:39:32]
+So now
+
+[00:39:33 -> 00:39:35]
+we said there are these many three lights
+
+[00:39:35 -> 00:39:38]
+that I see as part of the board display.
+
+[00:39:39 -> 00:39:41]
+We named them one, two, three, right?
+
+[00:39:42 -> 00:39:44]
+Now first thing, you have the resources,
+
+[00:39:45 -> 00:39:47]
+you have identified the resources.
+
+[00:39:47 -> 00:39:50]
+Now tell me with this resource what I want to do.
+
+[00:39:50 -> 00:39:53]
+Typical activity with the lights being there,
+
+[00:39:53 -> 00:39:57]
+probably I want to either switch them on, switch them off.
+
+[00:39:58 -> 00:40:00]
+Ultimately what I am trying to do?
+
+[00:40:00 -> 00:40:02]
+Change the state, right?
+
+[00:40:02 -> 00:40:04]
+Now how to change the state?
+
+[00:40:04 -> 00:40:06]
+Among the four, which one you think makes sense?
+
+[00:40:07 -> 00:40:13]
+Delete out of question, get not making sense.
+
+[00:40:13 -> 00:40:16]
+So you now have only two choices, post or put.
+
+[00:40:16 -> 00:40:17]
+Which one you think?
+
+[00:40:18 -> 00:40:22]
+Post, status updates, currently what is the status?
+
+[00:40:22 -> 00:40:23]
+How do I know?
+
+[00:40:23 -> 00:40:24]
+Get.
+
+[00:40:24 -> 00:40:27]
+So I will read the status, current status.
+
+[00:40:28 -> 00:40:30]
+Once I see the current status is say off,
+
+[00:40:31 -> 00:40:32]
+I want to change it.
+
+[00:40:32 -> 00:40:33]
+How to
+
+[00:40:33 -> 00:40:34]
+change the request?
+
+[00:40:34 -> 00:40:36]
+How to post a request?
+
+[00:40:36 -> 00:40:37]
+Okay, there is a post request.
+
+[00:40:38 -> 00:40:42]
+Now there is a way for me to implement a get request.
+
+[00:40:43 -> 00:40:48]
+Anything that I download will be always through a HTTP get.
+
+[00:40:49 -> 00:40:49]
+Right?
+
+[00:40:49 -> 00:40:52]
+Likewise I want to go for any post request.
+
+[00:40:52 -> 00:40:53]
+How do I implement?
+
+[00:40:54 -> 00:40:55]
+Anybody has tried anything?
+
+[00:40:56 -> 00:41:01]
+Postman or any such fast API, right?
+
+[00:41:01 -> 00:41:04]
+So you do have certain, say frameworks or utilities
+
+[00:41:04 -> 00:41:08]
+through which you can actually implement a post request.
+
+[00:41:09 -> 00:41:10]
+Right?
+
+[00:41:10 -> 00:41:12]
+And ensure your webpage receives the post request.
+
+[00:41:13 -> 00:41:13]
+Right?
+
+[00:41:14 -> 00:41:18]
+Okay, so post will be useful.
+
+[00:41:18 -> 00:41:21]
+Status changed to an existing resource.
+
+[00:41:21 -> 00:41:25]
+And put will, either you want to add one more,
+
+[00:41:26 -> 00:41:30]
+through say create or you want to update it by replacement.
+
+[00:41:30 -> 00:41:32]
+You want to replace something which is,
+
+[00:41:32 -> 00:41:34]
+say faulty, it's not working,
+
+[00:41:34 -> 00:41:37]
+probably you want to replace that with something else,
+
+[00:41:37 -> 00:41:38]
+then put will be the useful one.
+
+[00:41:39 -> 00:41:39]
+Right?
+
+[00:41:40 -> 00:41:42]
+And if I do not want one particular resource,
+
+[00:41:42 -> 00:41:45]
+then probably I should go for a removal
+
+[00:41:45 -> 00:41:46]
+through a delete request.
+
+[00:41:46 -> 00:41:46]
+Right?
+
+[00:41:46 -> 00:41:50]
+So these are the four activities that we have.
+
+[00:41:50 -> 00:41:50]
+Right?
+
+[00:41:51 -> 00:41:55]
+Now, I want you to think with this background
+
+[00:41:55 -> 00:41:57]
+and tell me something.
+
+[00:41:57 -> 00:41:59]
+If I want to
+
+[00:42:00 -> 00:42:03]
+this activity, tell me what it should be
+
+[00:42:03 -> 00:42:04]
+in terms of these.
+
+[00:42:04 -> 00:42:06]
+View a book is for the book details.
+
+[00:42:07 -> 00:42:10]
+And after this, once you say check availability,
+
+[00:42:10 -> 00:42:11]
+you see the book is available.
+
+[00:42:11 -> 00:42:12]
+After that,
+
+[00:42:13 -> 00:42:15]
+issue book would be my function.
+
+[00:42:16 -> 00:42:16]
+Okay?
+
+[00:42:16 -> 00:42:18]
+Internally, how to implement?
+
+[00:42:19 -> 00:42:20]
+You have to go with a post request,
+
+[00:42:20 -> 00:42:23]
+change the states of the book from available
+
+[00:42:23 -> 00:42:25]
+to issued or not available.
+
+[00:42:25 -> 00:42:26]
+Right?
+
+[00:42:26 -> 00:42:29]
+So likewise, I would say that, okay,
+
+[00:42:29 -> 00:42:33]
+from the process oriented nature,
+
+[00:42:33 -> 00:42:37]
+think about all these activities as resource manipulations.
+
+[00:42:38 -> 00:42:42]
+That is where the idea or implementation of rest comes up.
+
+[00:42:43 -> 00:42:46]
+And all the implementations or the designs that we see
+
+[00:42:46 -> 00:42:49]
+in terms of cloud application are actually falling back
+
+[00:42:49 -> 00:42:51]
+towards this kind of a activity.
+
+[00:42:51 -> 00:42:54]
+Be it microservice architecture that we say,
+
+[00:42:54 -> 00:42:56]
+isolate all these features we say,
+
+[00:42:56 -> 00:42:58]
+bring in fault tolerance we say,
+
+[00:42:58 -> 00:43:02]
+all of these things we actually fall back towards this.
+
+[00:43:02 -> 00:43:05]
+Couple of more things that we need to understand now.
+
+[00:43:05 -> 00:43:08]
+These operations are safe.
+
+[00:43:09 -> 00:43:10]
+They are idempotent.
+
+[00:43:11 -> 00:43:13]
+Now what are these two keywords?
+
+[00:43:14 -> 00:43:14]
+Right?
+
+[00:43:14 -> 00:43:16]
+Now anything that we say is safe
+
+[00:43:17 -> 00:43:19]
+does not modify the resources.
+
+[00:43:20 -> 00:43:23]
+Meaning, you shouldn't have any write request at all.
+
+[00:43:23 -> 00:43:24]
+Write access at all.
+
+[00:43:25 -> 00:43:25]
+Right?
+
+[00:43:25 -> 00:43:27]
+So in that case, we call it as safe.
+
+[00:43:28 -> 00:43:32]
+So no modification, example would be your get call.
+
+[00:43:32 -> 00:43:36]
+Then likewise, if I want to see something as idempotent,
+
+[00:43:36 -> 00:43:38]
+idempotent has no additional effect
+
+[00:43:38 -> 00:43:40]
+if it is called more than once.
+
+[00:43:40 -> 00:43:41]
+Okay?
+
+[00:43:42 -> 00:43:45]
+If you call something once, whatever is the effect,
+
+[00:43:45 -> 00:43:48]
+if you call it five times, also it should have the,
+
+[00:43:48 -> 00:43:49]
+it should have the same effect.
+
+[00:43:50 -> 00:43:50]
+Right?
+
+[00:43:50 -> 00:43:55]
+Now why it is so important, then there are some examples.
+
+[00:43:56 -> 00:43:57]
+Now connecting to this one,
+
+[00:43:58 -> 00:44:02]
+if I am making any Google Pay, is it idempotent?
+
+[00:44:02 -> 00:44:07]
+The thought is that idempotent which are not,
+
+[00:44:07 -> 00:44:08]
+try to keep them in mind.
+
+[00:44:09 -> 00:44:12]
+And why they are needed that way or not.
+
+[00:44:13 -> 00:44:14]
+Okay, now see here.
+
+[00:44:14 -> 00:44:16]
+Payment as such is not idempotent.
+
+[00:44:16 -> 00:44:19]
+If I say pay once, it will pay.
+
+[00:44:19 -> 00:44:22]
+If I say pay again, it will make the payment.
+
+[00:44:22 -> 00:44:24]
+That is my choice, my decision.
+
+[00:44:25 -> 00:44:28]
+Now let's imagine from the application perspective
+
+[00:44:28 -> 00:44:30]
+and you think about any reservations.
+
+[00:44:30 -> 00:44:35]
+One seat, one berth, one ticket sold only once.
+
+[00:44:35 -> 00:44:37]
+Idempotent, we need it to be.
+
+[00:44:38 -> 00:44:39]
+It shouldn't have any effect.
+
+[00:44:40 -> 00:44:43]
+Like same seat is being now having four competitors.
+
+[00:44:43 -> 00:44:44]
+You can't.
+
+[00:44:44 -> 00:44:46]
+So you need certain things
+
+[00:44:46 -> 00:44:49]
+which needs to be idempotent in nature.
+
+[00:44:49 -> 00:44:52]
+Now which of these are, which of these are not?
+
+[00:44:52 -> 00:44:54]
+Okay, now see.
+
+[00:44:54 -> 00:44:54]
+Get.
+
+[00:44:55 -> 00:44:55]
+Is it safe?
+
+[00:44:56 -> 00:44:59]
+Safe says there shouldn't be any modification.
+
+[00:44:59 -> 00:45:01]
+Get can't modify anything.
+
+[00:45:01 -> 00:45:02]
+Yes.
+
+[00:45:03 -> 00:45:03]
+Idempotent,
+
+[00:45:03 -> 00:45:04]
+you download.
+
+[00:45:04 -> 00:45:06]
+Is it going to change anything to the resource?

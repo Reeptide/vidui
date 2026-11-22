@@ -1576,3 +1576,167 @@ body {
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+/* ==========================================================================
+   YouTube-style Chapters Panel
+   ========================================================================== */
+.chapters-panel {
+  background: var(--bg-black-surface);
+  border: 1px solid var(--border-subtle);
+  border-top: none;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.chapters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.4rem;
+  background: rgba(14, 18, 27, 0.9);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.chapters-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.chapters-count {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+}
+
+.chapters-list {
+  max-height: 320px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.chapters-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chapters-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chapters-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.chapter-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.4rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.chapter-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.chapter-item:hover {
+  background: rgba(0, 194, 255, 0.06);
+  border-left-color: rgba(0, 194, 255, 0.4);
+}
+
+.chapter-item.active {
+  background: rgba(0, 194, 255, 0.1);
+  border-left-color: var(--secondary-blue-cyan);
+}
+
+.chapter-item.active .chapter-title {
+  color: var(--secondary-blue-cyan);
+}
+
+.chapter-number {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.chapter-item.active .chapter-number {
+  background: var(--secondary-blue-cyan);
+  color: var(--bg-black-deep);
+  box-shadow: 0 0 10px var(--secondary-blue-glow);
+}
+
+.chapter-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.chapter-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chapter-time-range {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.chapter-duration-badge {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--secondary-blue-cyan);
+  background: rgba(0, 194, 255, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Chapter markers on the timeline */
+.timeline-chapter-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  z-index: 2;
+  pointer-events: none;
+  transition: background 0.15s ease;
+}
+
+.timeline-container:hover .timeline-chapter-marker {
+  background: rgba(255, 255, 255, 0.7);
+  height: 100%;
+}

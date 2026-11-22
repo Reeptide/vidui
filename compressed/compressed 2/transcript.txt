@@ -1,0 +1,1326 @@
+LECTURE TRANSCRIPT
+============================================================
+Original duration  : 01:04:00
+Cleaned duration   : 00:38:28
+Speaker profile    : LOUD  |  pitch 264 Hz  |  SNR 30 dB  |  VAD threshold 0.45
+============================================================
+
+[00:00:00 -> 00:00:09]
+if I can somehow construct the first thing that I put as an address of this particular
+
+[00:00:09 -> 00:00:12]
+variable then what do you think will come here?
+
+[00:00:13 -> 00:00:18]
+The address, to that address you can write anything then,
+
+[00:00:18 -> 00:00:25]
+Yes, to the sixth argument I can write whatever I want to do and you know that in the memory
+
+[00:00:25 -> 00:00:28]
+I basically write down addresses in little Indian format,
+
+[00:00:29 -> 00:00:32]
+the format string input is coming from the
+
+[00:00:32 -> 00:00:34]
+user and the user can do anything.
+
+[00:00:35 -> 00:00:39]
+If I give percentile S it will try to fetch the argument, treat it as an address that
+
+[00:00:39 -> 00:00:43]
+takes me to the string, it kind of crashed, right?
+
+[00:00:44 -> 00:00:53]
+Second thing what we did was can I know where, which argument is a particular variable, right?
+
+[00:00:53 -> 00:01:00]
+Third thing that I wanted to do was can I know whatever I am passing you as input, which
+
+[00:01:00 -> 00:01:07]
+argument is that for printf, where is the starting point of whatever input you are writing.
+
+[00:01:07 -> 00:01:15]
+So for that what I did I gave AAAA and I got to know that it is the sixth argument where
+
+[00:01:15 -> 00:01:17]
+I have AAAA printed.
+
+[00:01:17 -> 00:01:25]
+Now I want to make use of this in order to change the value at variable, I want to change
+
+[00:01:25 -> 00:01:31]
+this, that's why in my code I have written data at target address this, after you explore
+
+[00:01:31 -> 00:01:35]
+this vulnerability what is the data at the target address, right now I have not changed
+
+[00:01:35 -> 00:01:43]
+it, but what I plan to do whatever is the address of where, this is the value of where,
+
+[00:01:43 -> 00:01:52]
+but what is the address of where, this address, if instead of saying AAAA I put this address,
+
+[00:01:52 -> 00:01:58]
+if instead of saying AAAA I put this address, this address is what will come as the sixth
+
+[00:01:58 -> 00:01:58]
+argument
+
+[00:01:59 -> 00:02:05]
+and if I can somehow write to this address, this value will get changed.
+
+[00:02:05 -> 00:02:13]
+Now how do you write using printf is the question, till now percentile D, percentile X, percentile
+
+[00:02:13 -> 00:02:17]
+S, percentile L, LN all of these only fetches values,
+
+[00:02:18 -> 00:02:21]
+right, which is that format specifier
+
+[00:02:21 -> 00:02:24]
+that can help you write to the stack,
+
+[00:02:24 -> 00:02:30]
+that format specifier is percentile N, what percentile
+
+[00:02:30 -> 00:02:33]
+N does is, listen to this very carefully,
+
+[00:02:33 -> 00:02:36]
+if I have let's say
+
+[00:02:36 -> 00:02:47]
+I say this, I is a variable, I is a variable, right, that I has an address that I fetch
+
+[00:02:47 -> 00:02:48]
+using dollar
+
+[00:02:48 -> 00:02:56]
+and percentile, right, now percentile N will basically see how many characters have
+
+[00:02:56 -> 00:03:03]
+you printed till now, how many characters are these, five, so what percentile N expects
+
+[00:03:03 -> 00:03:10]
+is an address, it will now go to that address and say the value is five,
+
+[00:03:10 -> 00:03:12]
+understood, right,
+
+[00:03:13 -> 00:03:18]
+so let me give you one more example so that it becomes very very clear,
+
+[00:03:18 -> 00:03:22]
+let's say pret, percentile N,
+
+[00:03:22 -> 00:03:28]
+percentile N and what does percentile N expect? Address,
+
+[00:03:28 -> 00:03:36]
+so this is my format string and let me say ampersand I, ampersand oh sorry what is this,
+
+[00:03:36 -> 00:03:40]
+ampersand only, yeah, I and J, right,
+
+[00:03:40 -> 00:03:43]
+this first percentile N will print what?
+
+[00:03:43 -> 00:03:55]
+Wherever is J, the address J, it will print, no, this is six, this is five, it will print
+
+[00:03:55 -> 00:03:58]
+cumulative number here, eleven,
+
+[00:03:59 -> 00:04:04]
+got it, it will print cumulative number at that point,
+
+[00:04:05 -> 00:04:07]
+so what does percentile N expect?
+
+[00:04:07 -> 00:04:12]
+Address, do you get what I am trying to do now? I know
+
+[00:04:12 -> 00:04:22]
+that my input starts as the sixth argument, frame your user input in such a way, now if
+
+[00:04:22 -> 00:04:29]
+I say percentile X, percentile X, percentile X, percentile, five percentile X, now if I
+
+[00:04:29 -> 00:04:33]
+say percentile N, what will happen?
+
+[00:04:33 -> 00:04:38]
+What will happen? The sixth argument, it will put how
+
+[00:04:38 -> 00:04:42]
+many characters you have printed, alright, but then I have to print it to an address,
+
+[00:04:42 -> 00:04:52]
+I have to print it to an address, so what address should I print it? Whatever is the
+
+[00:04:52 -> 00:04:56]
+address there where you are pointing, whatever is the address there where you are pointing,
+
+[00:04:56 -> 00:05:03]
+right, here it was pointing to address of I, so in my stack frame what should be that
+
+[00:05:03 -> 00:05:10]
+address where I should be writing, address of where, so somehow if I can get at this
+
+[00:05:10 -> 00:05:16]
+position, the address of the variable which is this, then when percentile N comes to this
+
+[00:05:16 -> 00:05:23]
+point to this address it will write down how many ever characters are before this, right
+
+[00:05:23 -> 00:05:34]
+and then the value will not be 1 1 2 2 3 3 4 4, got it, right, so now how do I print
+
+[00:05:34 -> 00:05:41]
+this address? I know that I print it in little Indian, little Indian the
+
+[00:05:42 -> 00:05:43]
+lower address in
+
+[00:05:43 -> 00:05:53]
+the lower byte, right, so I will first put 2 4, then D 1, then F F, then F F, so look
+
+[00:05:53 -> 00:05:55]
+at how I have constructed this,
+
+[00:05:55 -> 00:06:03]
+I have used echo, I have put dollar and then there is a command, so when you put dollar
+
+[00:06:03 -> 00:06:11]
+and the command the output of that takes its place, so if I say printf hello, dollar printf
+
+[00:06:11 -> 00:06:19]
+hello, in my input I will only see hello, I will not see printf hello, is this clear?
+
+[00:06:19 -> 00:06:25]
+So now what I am doing, I am saying and printf in bash you don't write it like how you
+
+[00:06:25 -> 00:06:35]
+write in C, in C for printf you put brackets, but in bash you just put a space, so just
+
+[00:06:35 -> 00:06:42]
+a space and put the format string, this is the format, this is the string literal, right,
+
+[00:06:43 -> 00:06:50]
+and I know the address is D 1 2 4, so I print it in little Indian format, I put 2 4, then
+
+[00:06:50 -> 00:06:56]
+I put D 1, then F F, F F, that's it, this is similar to using AAA in the start,
+
+[00:06:56 -> 00:06:57]
+so this
+
+[00:06:57 -> 00:07:04]
+particular thing went and sat here, now instead of this it's a carefully crafted input that
+
+[00:07:04 -> 00:07:11]
+goes and sits at the sixth argument, it's now an address and then later I have how many
+
+[00:07:11 -> 00:07:16]
+percentile X, that offset I should know, the offset is in terms of the number of arguments,
+
+[00:07:16 -> 00:07:24]
+so after how many arguments you have your input, 5, so you have 5 percentile X, the
+
+[00:07:24 -> 00:07:31]
+sixth argument is where your input starts, now it is an address, how do I fetch it, percentile
+
+[00:07:31 -> 00:07:33]
+X, so can you tell me what value gets printed,
+
+[00:07:33 -> 00:07:36]
+the number of characters, so this is, this
+
+[00:07:36 -> 00:07:43]
+will basically go as four characters, it because it will try to now interpret as, as scheme
+
+[00:07:43 -> 00:07:49]
+A what is the value, sometimes it doesn't even lead to an printable character, this
+
+[00:07:49 -> 00:07:53]
+hex value doesn't even lead to a printable character, so you will have but four characters
+
+[00:07:53 -> 00:08:04]
+here, 4 plus 1, 4 space, 5, 6, 7, 8, 9, 10, 11, so you can count, those many would get
+
+[00:08:04 -> 00:08:11]
+printed, so it was 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 20,
+
+[00:08:11 -> 00:08:18]
+something like that and whatever is the value in hex gets printed there, right, so if I
+
+[00:08:18 -> 00:08:23]
+now run this dot slash input dot sh, this will give me input,
+
+[00:08:23 -> 00:08:30]
+so the hex value of dollar is 24, so that's why it's printing dollar for the first one,
+
+[00:08:30 -> 00:08:35]
+the others are not coming out to be printable characters, so it's just a placeholder, rest
+
+[00:08:35 -> 00:08:43]
+of the things are like this, if I now run my program, which is well, by taking this
+
+[00:08:43 -> 00:08:44]
+stop sleeping Yamin, you
+
+[00:08:44 -> 00:08:46]
+have been sleeping since the start of the class,
+
+[00:08:46 -> 00:08:48]
+I will not give you attendance today
+
+[00:08:48 -> 00:08:56]
+and you guys are also very disturbed, Ishaan are you writing, Arnav, paka,
+
+[00:08:56 -> 00:08:59]
+once you get it, it's very easy format string,
+
+[00:08:59 -> 00:09:03]
+you are fasting, okay, drink water,
+
+[00:09:03 -> 00:09:06]
+A converts to 41, it
+
+[00:09:06 -> 00:09:08]
+is basically, it's just
+
+[00:09:08 -> 00:09:14]
+printing the ASCII value of it, so when you say capital A, capital A is still capital A,
+
+[00:09:14 -> 00:09:18]
+so printable characters which are those, it will just print,
+
+[00:09:18 -> 00:09:19]
+that is later when you print
+
+[00:09:19 -> 00:09:25]
+41, 41, 41, so there it was, right, later it printed, but now you have already given
+
+[00:09:25 -> 00:09:26]
+the hex of it,
+
+[00:09:26 -> 00:09:30]
+so that is just a, because we, okay
+
+[00:09:31 -> 00:09:31]
+it printf,
+
+[00:09:31 -> 00:09:41]
+no, what do you put in printf, things that you can print on the keyboard, right, 24 doesn't
+
+[00:09:41 -> 00:09:47]
+lead to a key on the keyboard that is printable, that's why, okay,
+
+[00:09:47 -> 00:09:48]
+6th one, no,
+
+[00:09:49 -> 00:09:51]
+6th argument is where my input starts,
+
+[00:09:52 -> 00:09:54]
+no, no, %n is just reading
+
+[00:09:54 -> 00:09:55]
+the address,
+
+[00:09:55 -> 00:10:01]
+it's just reading, when you say %n, it's reading the address
+
+[00:10:01 -> 00:10:03]
+and then writing to that address,
+
+[00:10:03 -> 00:10:06]
+so what I have put here is basically the address of
+
+[00:10:06 -> 00:10:06]
+this,
+
+[00:10:06 -> 00:10:12]
+now the value is not 1, 1, 2, 2, 3, 3, 4, 4, the value is now changed to, look
+
+[00:10:12 -> 00:10:15]
+at the thing, no, target address, it never changed,
+
+[00:10:16 -> 00:10:18]
+so I basically said go to the variable
+
+[00:10:18 -> 00:10:19]
+address and change it,
+
+[00:10:19 -> 00:10:22]
+it will, wherever the pointer is pointing, it will
+
+[00:10:22 -> 00:10:25]
+read it as an address, it will read it as an address,
+
+[00:10:25 -> 00:10:30]
+give you an idea that now you can change return address also, yes or no,
+
+[00:10:31 -> 00:10:33]
+but then, guys please,
+
+[00:10:33 -> 00:10:39]
+whatever we have done, I could change the value but this is, this may not be the value
+
+[00:10:39 -> 00:10:41]
+that I want to change to,
+
+[00:10:41 -> 00:10:45]
+this may not be the value that I want to change to, I may
+
+[00:10:45 -> 00:10:50]
+want to change it to something else, a specific value, how do I do that is the question now,
+
+[00:10:51 -> 00:10:57]
+iska decimal nikaloo, do we have 37 characters, how many we have,
+
+[00:10:57 -> 00:10:57]
+these
+
+[00:10:57 -> 00:11:02]
+are 4 characters, printf will print 4, am I right?
+
+[00:11:03 -> 00:11:05]
+And then how many are there,
+
+[00:11:05 -> 00:11:07]
+guys please I am not able to hear the questions
+
+[00:11:07 -> 00:11:11]
+and you guys talk a lot when I am teaching also, how many times I should point out,
+
+[00:11:11 -> 00:11:13]
+if you count 2 4 d 1 also,
+
+[00:11:14 -> 00:11:20]
+it is 37 right, okay you don't have to count this, you have to count this sir, it's the
+
+[00:11:20 -> 00:11:27]
+number of characters that it has printed, not this, not this, it is this, thank you,
+
+[00:11:28 -> 00:11:29]
+it is 37,
+
+[00:11:30 -> 00:11:33]
+2 3 4 5 6 7 8,
+
+[00:11:33 -> 00:11:39]
+8 plus 8, 16, 17, 17 plus 8,
+
+[00:11:39 -> 00:11:42]
+17 plus 8, 25,
+
+[00:11:42 -> 00:11:46]
+26, 27, 28 plus
+
+[00:11:46 -> 00:11:50]
+8, 36 that's new line,
+
+[00:11:50 -> 00:11:58]
+so 37 and 37 in hex is 0 x 2 5, got it, it's the number of printable
+
+[00:11:58 -> 00:12:04]
+characters, what is that you have printed, alright, is this clear, is it making sense
+
+[00:12:04 -> 00:12:04]
+now?
+
+[00:12:05 -> 00:12:07]
+where's address is d 1 2 4,
+
+[00:12:07 -> 00:12:10]
+so that is why it's very important for me
+
+[00:12:10 -> 00:12:12]
+to know the offset at which my input is sitting,
+
+[00:12:13 -> 00:12:18]
+is sitting at which offset, which argument number, that's very important for me to
+
+[00:12:18 -> 00:12:24]
+know, if I don't know that, then I can't make changes, so if I go to that argument
+
+[00:12:24 -> 00:12:29]
+I have put the variable's address, to that variable address I have made the change using
+
+[00:12:29 -> 00:12:34]
+percentile n, because percentile n expects an address, to that address it writes the
+
+[00:12:34 -> 00:12:35]
+number of characters,
+
+[00:12:35 -> 00:12:40]
+what it would fetch, that may be a value, it may not even
+
+[00:12:40 -> 00:12:46]
+be an address, so when I say it fetches an address basically what is inside is actually
+
+[00:12:46 -> 00:12:46]
+an address,
+
+[00:12:46 -> 00:12:51]
+honey, then it may come to segmentation fault, if
+
+[00:12:51 -> 00:12:56]
+it's not a proper address, right and we don't know what we are modifying, so we don't even
+
+[00:12:56 -> 00:12:57]
+know how to check it,
+
+[00:12:57 -> 00:13:03]
+argument means on the stack frame you have reached
+
+[00:13:04 -> 00:13:09]
+basically the first 4 bytes of your input
+
+[00:13:09 -> 00:13:14]
+string, that is the sixth argument, because
+
+[00:13:14 -> 00:13:21]
+whatever you copy here in the format string, that just gets printed, but then it's coming
+
+[00:13:21 -> 00:13:28]
+from where, the user input, user input is here no, so that's the sixth argument, so
+
+[00:13:28 -> 00:13:35]
+you basically just print it as is, whatever the user said, but then using your arguments
+
+[00:13:35 -> 00:13:40]
+you have fetched where that actual thing is and you have replaced this with this address,
+
+[00:13:41 -> 00:13:46]
+whatever is the address here, you replace this with this address, where's the address,
+
+[00:13:47 -> 00:13:53]
+now when you use percentile N as the sixth argument, it treats this thing as an address,
+
+[00:13:54 -> 00:14:00]
+changes the value to how many characters it has printed, so earlier the value was this,
+
+[00:14:00 -> 00:14:03]
+now the value becomes 0x25,
+
+[00:14:03 -> 00:14:06]
+why because in our thing the number of characters that I
+
+[00:14:06 -> 00:14:13]
+printed is this, is that clear, so is this fine Anoghana,
+
+[00:14:14 -> 00:14:16]
+okay, let's just do how do
+
+[00:14:16 -> 00:14:22]
+I change this to a specific value, right, because that will be more interesting, how
+
+[00:14:22 -> 00:14:23]
+do I change this to a specific value,
+
+[00:14:24 -> 00:14:27]
+let's say I want to change variable value which
+
+[00:14:27 -> 00:14:33]
+is currently 0x11223344 to
+
+[00:14:34 -> 00:14:37]
+0x887799,
+
+[00:14:37 -> 00:14:41]
+do you get this, I want to change the value from
+
+[00:14:41 -> 00:14:44]
+66887799, how do I do this,
+
+[00:14:45 -> 00:14:46]
+then only percentile
+
+[00:14:46 -> 00:14:54]
+N can put, right, and this is going to be too much of a task, you will reach that eventually
+
+[00:14:54 -> 00:14:58]
+maybe in an hour or so, some billion numbers that you have to print,
+
+[00:14:58 -> 00:14:59]
+correct, maybe 20
+
+[00:14:59 -> 00:15:06]
+minutes I am not sure, so do we have a faster way of doing this is the question, do I have
+
+[00:15:06 -> 00:15:14]
+a faster way of printing whatever I want to print, right, that's what we will look now,
+
+[00:15:14 -> 00:15:26]
+for that we need to understand something called the length modifiers, right, so there are
+
+[00:15:26 -> 00:15:28]
+two kind of length modifiers,
+
+[00:15:28 -> 00:15:34]
+one is called, so I know what percentile N does, right, I
+
+[00:15:34 -> 00:15:36]
+know what percentile HN does,
+
+[00:15:36 -> 00:15:42]
+percentile N will basically take the entire address and
+
+[00:15:42 -> 00:15:49]
+whatever value you want to print, it will print in that entire thing, all right, for example,
+
+[00:15:50 -> 00:15:58]
+when I say 1, 2, 3, 4, 5, how many characters, 5, so whatever is address of A, it will then
+
+[00:15:58 -> 00:16:03]
+print, change the value of A to the entire value to 5,
+
+[00:16:03 -> 00:16:06]
+percentile HN will only change the last 2
+
+[00:16:06 -> 00:16:15]
+bytes of the input, it will only change last 2 bytes of the input, so here if my A, I have
+
+[00:16:15 -> 00:16:24]
+kept the ABC value as same, if the value is 1, 1, 2, 2, 3, 3, 4, 4 and if I use percentile HN,
+
+[00:16:25 -> 00:16:27]
+what do you think the number B will become,
+
+[00:16:27 -> 00:16:35]
+yeah, it will become 1, 1, 2, 2, 0, 0, 0, 5, because only the last 2 bytes is what
+
+[00:16:35 -> 00:16:37]
+you are replacing, is that clear,
+
+[00:16:37 -> 00:16:41]
+percentile HN will only replace the last byte,
+
+[00:16:41 -> 00:16:42]
+what is the
+
+[00:16:42 -> 00:16:52]
+last byte, 4, 4, so that will get changed to 0, 5, that's it, whereas percentile N will change
+
+[00:16:53 -> 00:16:57]
+all the 4 bytes of value, so if I just run this,
+
+[00:16:58 -> 00:17:04]
+all the 4 bytes of the number to whatever, so it was just 5, so it has printed 5, percentile HN
+
+[00:17:04 -> 00:17:14]
+will change only last 2, so it has become 0, 0, 0, 5, HN last byte which is 0, 5,
+
+[00:17:14 -> 00:17:22]
+all right, now to change it to a specific value I will make use of let's say percentile HN,
+
+[00:17:22 -> 00:17:30]
+I can also make use of HHN where I change 1 byte at a time, but let me use just 2 bytes at a time,
+
+[00:17:31 -> 00:17:39]
+and then we also make use of something known as, you know, these modifiers like precision modifiers,
+
+[00:17:40 -> 00:17:44]
+so right now when I have run my vulnerable code,
+
+[00:17:44 -> 00:17:48]
+I gave, you know, AAA percentile X,
+
+[00:17:48 -> 00:17:56]
+some of the numbers were printed as 8 byte, right, sorry, 8 numbers you could see because
+
+[00:17:56 -> 00:18:03]
+it's actually a hexadecimal, so the entire hex format, some numbers were only 64, because the
+
+[00:18:03 -> 00:18:09]
+front values were 0, if you don't want that, you want everything to be printed like, you know,
+
+[00:18:09 -> 00:18:16]
+all the 4 bytes I want to see, that means all the 8 numbers I want to see, I can make use of
+
+[00:18:16 -> 00:18:23]
+this precision modifier which is nothing but you put the percentile, you put dot 8X,
+
+[00:18:23 -> 00:18:24]
+so now every
+
+[00:18:24 -> 00:18:26]
+number that you see would be
+
+[00:18:26 -> 00:18:33]
+8 length, right, percentile dot 8X, initially it was only printing
+
+[00:18:33 -> 00:18:34]
+64,
+
+[00:18:34 -> 00:18:41]
+now every number is printed like this, I can make use of this also, right, in order to calculate
+
+[00:18:41 -> 00:18:48]
+how much I should write down and so on, so making use of these two things, of course this doesn't
+
+[00:18:48 -> 00:18:57]
+change my offset, the offset where my input starts is still the sixth argument, it would only change
+
+[00:18:57 -> 00:19:04]
+the number of characters printed, right, for example let's say same
+
+[00:19:04 -> 00:19:05]
+program,
+
+[00:19:06 -> 00:19:11]
+but now instead of using percentile X, I'm making sure that it prints those 8 numbers for everything,
+
+[00:19:12 -> 00:19:18]
+right, so this time when I run this and I'm printing this in value, so if I just run change
+
+[00:19:19 -> 00:19:23]
+the value and I pass to vul the value,
+
+[00:19:23 -> 00:19:28]
+the hex value will differ, no, why because earlier 64 was just
+
+[00:19:28 -> 00:19:34]
+getting printed as 64, now for every number I'm saying 8 8 8, so you can now count, whatever you
+
+[00:19:34 -> 00:19:40]
+get add plus 1 for the new line because echo prints new line, that's the hex value of it, whatever
+
+[00:19:40 -> 00:19:46]
+is the decimal you get the hex value of it, do you get this, right, but then changing to a specific
+
+[00:19:46 -> 00:19:56]
+value, how do I do it, now I'm saying let me do it two bytes at a time, how do I do that, just look
+
+[00:19:56 -> 00:19:57]
+at the logic first,
+
+[00:19:58 -> 00:20:00]
+what is the address at which I'm trying to write down,
+
+[00:20:00 -> 00:20:03]
+D124, right,
+
+[00:20:03 -> 00:20:07]
+so the lower address
+
+[00:20:07 -> 00:20:15]
+is, I'll not write 0XFF, I'll just write D124, right, and then
+
+[00:20:15 -> 00:20:22]
+I have D125, the next one, the next byte, D126, D127,
+
+[00:20:23 -> 00:20:28]
+to this byte, to this byte I want to write
+
+[00:20:28 -> 00:20:40]
+down 0X, so if I have to put the number basically in little Indian, how will you put this number 0X66887799,
+
+[00:20:40 -> 00:20:48]
+this is the most significant byte, this is the least significant byte, if it's little Indian,
+
+[00:20:49 -> 00:20:49]
+the lower address,
+
+[00:20:50 -> 00:20:53]
+the low significant byte goes, so it will be like
+
+[00:20:53 -> 00:20:55]
+so when I'm writing two
+
+[00:20:55 -> 00:21:04]
+byte at a time, at this particular address I will write down 0X7799, at this address I will write
+
+[00:21:04 -> 00:21:08]
+down 0X6688,
+
+[00:21:08 -> 00:21:16]
+getting this, right, now 0X6688 in decimal is how much,
+
+[00:21:17 -> 00:21:27]
+we can't do it right, it will take lot of time, 0X68688 in decimal is 26248,
+
+[00:21:28 -> 00:21:37]
+all right, 0X7799 is basically 30617,
+
+[00:21:38 -> 00:21:41]
+make use of two percentile n, you know how two percentile n
+
+[00:21:41 -> 00:21:41]
+you work,
+
+[00:21:42 -> 00:21:49]
+the last percentile n will give you a cumulative count, right, so now the address that
+
+[00:21:49 -> 00:21:59]
+I want to change I have it, so look at how I will frame my input, user input, all right, so we will
+
+[00:21:59 -> 00:22:06]
+now say this is the lower number, no, so let me write this number and where are you writing this
+
+[00:22:06 -> 00:22:13]
+number, to this address, got it, and I know where my input starts, which argument,
+
+[00:22:13 -> 00:22:14]
+which argument
+
+[00:22:14 -> 00:22:22]
+does my input start, sixth argument, no, don't forget that, okay, so let me say printf,
+
+[00:22:23 -> 00:22:23]
+I will
+
+[00:22:23 -> 00:22:28]
+first write this number to D126, what is that address,
+
+[00:22:29 -> 00:22:34]
+26D1, so obviously you put X, FF,
+
+[00:22:34 -> 00:22:35]
+yes,
+
+[00:22:35 -> 00:22:40]
+and then what I will do is I will just separate the two addresses
+
+[00:22:40 -> 00:22:42]
+using, you can put add the
+
+[00:22:42 -> 00:22:47]
+rate, hash, star, whatever you want to put you put, some four bytes you put, this will give me
+
+[00:22:47 -> 00:22:55]
+how many bytes, four bytes, this will give me how many bytes, four bytes, and then I put the next
+
+[00:22:55 -> 00:23:06]
+address, which is this, which is slash X, 24, D1, slash X, FF, SS, so this is my format string,
+
+[00:23:07 -> 00:23:07]
+am I right,
+
+[00:23:08 -> 00:23:17]
+now I know that it is the sixth argument where I have to put the first address,
+
+[00:23:18 -> 00:23:23]
+the seventh argument will become add the rate, add the rate, add the rate, the eighth argument
+
+[00:23:23 -> 00:23:34]
+where I have this, right, so now what I will do is I will put dot 8X percentile dot 8X,
+
+[00:23:35 -> 00:23:36]
+percentile how many,
+
+[00:23:36 -> 00:23:39]
+one, two, three,
+
+[00:23:39 -> 00:23:42]
+four, and five,
+
+[00:23:42 -> 00:23:44]
+I have to be very careful with what I put
+
+[00:23:44 -> 00:23:52]
+here, because after this is when I will put percentile HN and that value should get modified
+
+[00:23:52 -> 00:23:53]
+to 6688,
+
+[00:23:54 -> 00:24:01]
+yes or no, so how many number of characters should I print here, so if you put 8,
+
+[00:24:02 -> 00:24:09]
+8 characters get printed, if you put 100, 100 gets printed, that's how it does it no, so for example
+
+[00:24:09 -> 00:24:11]
+if I use print F
+
+[00:24:12 -> 00:24:18]
+percentile dot let's say 5D and I have given 10,
+
+[00:24:18 -> 00:24:21]
+and I have given 10, what will be
+
+[00:24:21 -> 00:24:21]
+the output,
+
+[00:24:21 -> 00:24:28]
+now how many characters should I print here, this is how many bytes, four bytes of first address,
+
+[00:24:28 -> 00:24:36]
+four bytes of second address, four bytes of third address, 12 bytes plus how many are these,
+
+[00:24:37 -> 00:24:39]
+one, two, three, four,
+
+[00:24:39 -> 00:24:43]
+am I right, so this is how much, four into eight,
+
+[00:24:44 -> 00:24:46]
+32, 32 plus 12,
+
+[00:24:46 -> 00:24:55]
+44 characters, 44 bytes is done, how many more bytes, no I will not put space, if you put space
+
+[00:24:55 -> 00:25:02]
+you have to count for that also, I will not put space, so 44 characters, 44 bytes is done,
+
+[00:25:02 -> 00:25:07]
+in order to get 6688 how many more bytes do you need, how many more characters do you need to
+
+[00:25:07 -> 00:25:13]
+print, 26248 minus 44, how much is that,
+
+[00:25:13 -> 00:25:18]
+26204, so that is the number I should write here,
+
+[00:25:19 -> 00:25:22]
+26204, are you getting this,
+
+[00:25:22 -> 00:25:25]
+the number as is I will just print that number make sure that the
+
+[00:25:25 -> 00:25:26]
+precision is 8,
+
+[00:25:26 -> 00:25:30]
+so that also you can take it, but now before the decimal you can do it like this,
+
+[00:25:31 -> 00:25:36]
+you can use this precision, I know precision when you talk about numbers it is after the
+
+[00:25:36 -> 00:25:41]
+decimal point, but if you want the number to be printed of a particular length in C
+
+[00:25:41 -> 00:25:54]
+you use this, do you understand this, yes or no, now this will print what 6688 at this address,
+
+[00:25:54 -> 00:26:02]
+so this will ensure 88 comes here, 66 comes here, if I have to now get 7799 at this address,
+
+[00:26:02 -> 00:26:06]
+how many more characters do I need,
+
+[00:26:06 -> 00:26:09]
+how many 30617
+
+[00:26:09 -> 00:26:12]
+minus 26248,
+
+[00:26:13 -> 00:26:16]
+yes do you understand why I have added it at the right now,
+
+[00:26:17 -> 00:26:27]
+the next argument I will print it with precision 4369X and then I will change
+
+[00:26:28 -> 00:26:33]
+the next argument the address will be this, so this address I will then write down the
+
+[00:26:33 -> 00:26:39]
+look at the first one that's how I am creating my string,
+
+[00:26:39 -> 00:26:45]
+so what is that we have done, I want to now change the variable value earlier it was just
+
+[00:26:45 -> 00:26:52]
+counting the number of characters writing some random thing, that's not of interest to me because
+
+[00:26:52 -> 00:26:58]
+if I have to modify return address I want to modify to a particular value, so I should know how to
+
+[00:26:58 -> 00:27:06]
+modify up to a particular value a particular address right, in order to do that I understood
+
+[00:27:06 -> 00:27:14]
+about length modifiers which is percentile N that would change all the 4 bytes, percentile HN will
+
+[00:27:14 -> 00:27:23]
+change 2 bytes, the last 2 bytes and then percentile HHN 1 byte, so I make use of percentile
+
+[00:27:23 -> 00:27:30]
+HN to change 2 bytes of the number at a time, now in order to do that I should first look at what
+
+[00:27:30 -> 00:27:39]
+the number is right, now in this case it so happened that 66887799 right, so I said I will
+
+[00:27:39 -> 00:27:46]
+write the lower number first, in case it was 77996688 I should change,
+
+[00:27:46 -> 00:27:47]
+I should change
+
+[00:27:47 -> 00:27:53]
+that 2 4 address first because I will have to write down the lower number there, the difference
+
+[00:27:53 -> 00:28:00]
+is what I will then put in the next byte, are you getting this, keep this in mind, are you getting
+
+[00:28:00 -> 00:28:08]
+this, I will always write down the lower number first then I will change, so that depends my
+
+[00:28:08 -> 00:28:12]
+number may not always look like this where the first half is smaller, second half is larger,
+
+[00:28:12 -> 00:28:18]
+it could be the first half is larger, second half is smaller right, so I have to figure it out and
+
+[00:28:18 -> 00:28:24]
+then keeping in mind that okay this is how my, this is the value that I want to change to,
+
+[00:28:25 -> 00:28:31]
+how does the value get fit in the memory little endian format right, so I look at the value that
+
+[00:28:31 -> 00:28:37]
+I want to change, I say okay if it is little endian I put the least significant byte at the
+
+[00:28:37 -> 00:28:43]
+lowest address that is how my number should look like, so if I am changing 2 bytes at a time that
+
+[00:28:43 -> 00:28:51]
+means at this address, at this address I should put 7799, at this address I should put 6688,
+
+[00:28:51 -> 00:28:56]
+whichever is the lower value you write that first, so that is why in my printf the first thing that
+
+[00:28:56 -> 00:29:04]
+I do is change D126 and then I put at the rate, at the rate, at the rate you should also understand
+
+[00:29:04 -> 00:29:10]
+why did I separate these with 4 extra bytes, why did I separate the 2 addresses with at the rate,
+
+[00:29:10 -> 00:29:18]
+you should know why, otherwise when I do percentile dot 4369x what will this do,
+
+[00:29:19 -> 00:29:22]
+nothing right, the next argument it will print with this precision,
+
+[00:29:22 -> 00:29:30]
+so that is why after the first address the next argument is just dummy with the precision printed
+
+[00:29:30 -> 00:29:40]
+with 4396 or 4369 okay, that is why I have at the rate, at the rate, now the pointer will move to
+
+[00:29:40 -> 00:29:49]
+the second address and you can put the cumulative number of bytes, do you get this right, when we
+
+[00:29:49 -> 00:29:55]
+run this I think this should also give you a good idea what is happening, how we have done
+
+[00:29:55 -> 00:30:04]
+the
+
+[00:30:05 -> 00:30:06]
+calculation, we calculated 69,
+
+[00:30:06 -> 00:30:07]
+where will I
+
+[00:30:07 -> 00:30:10]
+put, because in this address I want to put 7799,
+
+[00:30:11 -> 00:30:14]
+right now I only have 6688, the difference I want
+
+[00:30:14 -> 00:30:21]
+to put, correct, so that is why I just filled it with something, need not be at the rate it could
+
+[00:30:21 -> 00:30:24]
+be AAA, BBB, CCC anything,
+
+[00:30:24 -> 00:30:33]
+take the input from what should I see, what should I see, if I run it just like that
+
+[00:30:34 -> 00:30:40]
+input doesn't change, I mean the value of VAT doesn't change, if I just use this approach and
+
+[00:30:40 -> 00:30:41]
+I change it,
+
+[00:30:41 -> 00:30:47]
+he doesn't know what is happening, why do I ask you to close your laptop, huh,
+
+[00:30:47 -> 00:30:52]
+after that I will clap after ISA and in between
+
+[00:30:53 -> 00:30:54]
+do you get this,
+
+[00:30:54 -> 00:31:02]
+why this is 000, at the rate ka ASCII value, so is this okay, is this fine, is it making sense,
+
+[00:31:03 -> 00:31:15]
+at the rate ASCII value is 40, so that is why 40, 40 with the precision of 4369, I pronounced
+
+[00:31:15 -> 00:31:21]
+it right no, 4369, with the precision of 4369 that's why you have so many zeros, yeah,
+
+[00:31:22 -> 00:31:28]
+actually explored on that part, you can, I mean I have been, I was able to give a very big number
+
+[00:31:28 -> 00:31:37]
+also, but then the time that it may take in order to overwrite those 4 bytes, in the book it states
+
+[00:31:37 -> 00:31:43]
+that it may take around 1 hour or something or 20 minutes or something, but this happens in seconds
+
+[00:31:43 -> 00:31:49]
+when you do it with 2 bytes, I did not try with writing the entire number of bytes because I did
+
+[00:31:49 -> 00:31:53]
+not try also, I just went by the book it said 1 hour like itta time kiske baat hai,
+
+[00:31:53 -> 00:31:54]
+but you can
+
+[00:31:54 -> 00:31:58]
+write it, do you understand this question
+
+[00:31:58 -> 00:32:05]
+valid, he is like when there is no limit on the precision, right, why didn't you write down the
+
+[00:32:05 -> 00:32:11]
+entire number as such, entire number in decimal is changing to some billion number okay, so if I have
+
+[00:32:11 -> 00:32:17]
+to put that precision number, the book stated that it would take around I think, I am not sure,
+
+[00:32:17 -> 00:32:22]
+20 minutes or 1 hour or something like that, so hey, no, you try,
+
+[00:32:22 -> 00:32:25]
+do, wait, wait, wait, I am just looking where it states how much time it
+
+[00:32:25 -> 00:32:26]
+would take,
+
+[00:32:26 -> 00:32:33]
+target number, in order to reach the target number which is 66887799
+
+[00:32:33 -> 00:32:40]
+which is about 1 .72 billion in decimal, the estimated time is 1 hour,
+
+[00:32:40 -> 00:32:41]
+this is not so bad,
+
+[00:32:42 -> 00:32:45]
+but there is a better method that can achieve the same goal,
+
+[00:32:46 -> 00:32:49]
+it is not very old, it is a recent
+
+[00:32:49 -> 00:32:50]
+version, it is
+
+[00:32:50 -> 00:32:55]
+not possible, I am just saying for me to demo it, this is happening within
+
+[00:32:56 -> 00:33:02]
+milliseconds, right, but you can always write down the actual number with that precision,
+
+[00:33:02 -> 00:33:06]
+nobody is stopping you, what is,
+
+[00:33:06 -> 00:33:10]
+I am not getting you, guys, I am not able to hear what he is saying,
+
+[00:33:10 -> 00:33:10]
+yeah,
+
+[00:33:11 -> 00:33:15]
+to put four addresses and change every address to
+
+[00:33:15 -> 00:33:15]
+this,
+
+[00:33:15 -> 00:33:21]
+you can also change this one byte at a time
+
+[00:33:21 -> 00:33:24]
+right, to this address 99,
+
+[00:33:24 -> 00:33:30]
+then this 77, I mean choose properly, you first write to this address 66,
+
+[00:33:30 -> 00:33:37]
+then write to this address 77, then write to this address 88, because then the number would only be
+
+[00:33:37 -> 00:33:45]
+how much, how many bytes, 11, 11 is what they are, right, do it that way, that's also possible,
+
+[00:33:45 -> 00:33:49]
+stop here for now, but the thing is,
+
+[00:33:49 -> 00:33:51]
+the major attack which is code injection,
+
+[00:33:52 -> 00:33:58]
+where I will, I will just give you an idea, I now know how to change the address
+
+[00:33:58 -> 00:34:06]
+right, I will now change the return address to some of a function, let's say I have written
+
+[00:34:06 -> 00:34:15]
+FMTSTR, I will change the return address to point to some shell code, I know if you make
+
+[00:34:15 -> 00:34:20]
+stack not executable, you can put the return address as systems address or any of these
+
+[00:34:20 -> 00:34:25]
+functions in the library, but just to make things simple and say that you know, you can exploit
+
+[00:34:25 -> 00:34:31]
+this vulnerability to get your malicious code to run, we are just going to make stack executable
+
+[00:34:31 -> 00:34:36]
+and we will put shell code, we will construct the string in such a way, right now the string
+
+[00:34:36 -> 00:34:42]
+is constructed as percentile X, percentile N, yes, I will do that, the first initial part,
+
+[00:34:42 -> 00:34:48]
+I will do it that way, I want to change the return address and then towards the end of the
+
+[00:34:48 -> 00:34:55]
+shell code, so I will modify the return address to the shell code, to increase my chances of
+
+[00:34:55 -> 00:34:58]
+success, I can just change it to,
+
+[00:34:58 -> 00:35:02]
+I can change the entire string to no ops, so that I have a pool of
+
+[00:35:02 -> 00:35:09]
+addresses to which I can jump to, right, you jump to one of these pool of addresses, what is your
+
+[00:35:09 -> 00:35:14]
+shell code, if your shell code is doing setTOID of zero first and then invoking slash bin slash
+
+[00:35:14 -> 00:35:23]
+set, what you will see, I will get root shell, so I will do one thing, one second,
+
+[00:35:23 -> 00:35:24]
+I will just show
+
+[00:35:24 -> 00:35:27]
+you what is that we are trying to do,
+
+[00:35:27 -> 00:35:31]
+I am just printing address of
+
+[00:35:31 -> 00:35:39]
+the frame pointer in this particular guys, please look here, it's not easy, you look
+
+[00:35:39 -> 00:35:44]
+at the address of the frame pointer inside the function fmt str, you are passing the string as
+
+[00:35:44 -> 00:35:52]
+an argument, now that string that you now come from a bad file, right now I was just using
+
+[00:35:52 -> 00:35:59]
+some.sh, it should come from a bad file, if it comes from a bad file, I can construct it in a very
+
+[00:35:59 -> 00:36:09]
+nice way such that the return address is now modified to, modified to start of or one of the
+
+[00:36:09 -> 00:36:15]
+no ops and it then eventually leads you to shell code, but then in order to do this, you need to
+
+[00:36:15 -> 00:36:18]
+figure out at what offset is my input,
+
+[00:36:18 -> 00:36:22]
+like how we did it now, at what offset is my input to that
+
+[00:36:22 -> 00:36:28]
+only I will write down the, I will you know change it, change my return address to whatever I want to
+
+[00:36:28 -> 00:36:34]
+change, how to change, I will make use of exactly this particular thing, so I will not go into the
+
+[00:36:34 -> 00:36:35]
+details of this,
+
+[00:36:35 -> 00:36:40]
+I have the bad file already generated, so what I will do is basically when
+
+[00:36:40 -> 00:36:42]
+I give the bad file, sorry
+
+[00:36:43 -> 00:36:46]
+.py, so this is how I have
+
+[00:36:46 -> 00:36:48]
+constructed my user input,
+
+[00:36:48 -> 00:36:54]
+alright, so what is x90, no ops, in the starting is the format string,
+
+[00:36:55 -> 00:37:01]
+in the starting is the format string, so and towards the end is
+
+[00:37:01 -> 00:37:03]
+the shell code, shell code,
+
+[00:37:03 -> 00:37:08]
+alright, so when you run this, it should basically work, what is the address here,
+
+[00:37:08 -> 00:37:11]
+and then let me run fmt,
+
+[00:37:11 -> 00:37:16]
+address of string is d0c4d0a8,
+
+[00:37:16 -> 00:37:22]
+so I use exploit .c4d0a8,
+
+[00:37:22 -> 00:37:23]
+okay, something is happening,
+
+[00:37:23 -> 00:37:28]
+but when I do this, I should get hash, alright, we should get hash, that's it,
+
+[00:37:28 -> 00:37:29]
+we will see this
+
+[00:37:29 -> 00:37:36]
+in the next class, alright, I will also post the lab, so that the initial task at least you finish
+
+[00:37:36 -> 00:37:41]
+it off, the last task which is code injection, you can do it after I am done with the explanation,
+
+[00:37:41 -> 00:37:41]
+alright,
+
+[00:37:42 -> 00:37:44]
+may you wait for two minutes, very urgent,
+
+[00:37:45 -> 00:37:46]
+you will not understand this topic,
+
+[00:37:46 -> 00:37:48]
+have you understood,
+
+[00:37:48 -> 00:37:52]
+60%, when you do it, 100%,
+
+[00:37:52 -> 00:37:59]
+Nirja, Maitri, Pragati, Pranav, Pranav Rajesh,
+
+[00:37:59 -> 00:38:09]
+Tejas, Tarun N, Vamsi, Varsha, Vedika, Vibhav, Viren,
+
+[00:38:10 -> 00:38:14]
+post it today. I'll post the lab today, please do the first few experiments,
+
+[00:38:15 -> 00:38:20]
+If I ask you to write down the user input to fetch something, will you be able to do it?
+
+[00:38:20 -> 00:38:23]
+Unless you experiment, you will not be able to do it.
+
+[00:38:23 -> 00:38:28]
+Yeah, this time also chocolate after result. Above 30, not 30.

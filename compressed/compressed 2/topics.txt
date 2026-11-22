@@ -1,0 +1,4 @@
+Format String Attack Review and %n Write Primitive [0:00:00-0:07:04]
+Crafting Input to Overwrite Variables Using %n [0:07:04-0:15:06]
+Length Modifiers (%hn, %hhn) and Precision Control [0:15:06-0:23:06]
+Two-Byte Write Technique for Specific Value Exploitation [0:23:06-0:38:28]

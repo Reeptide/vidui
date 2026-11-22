@@ -423,6 +423,9 @@ async function navigateToPage2() {
   // Resolve Compressed Video Size & Stats
   await resolveCompressedStats(id, targetVideo);
 
+  // Fetch and render topic chapters
+  await fetchAndRenderChapters(id);
+
   showToast('Compression analysis complete!');
 }
 
@@ -619,6 +622,143 @@ function resetApplication() {
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
   showToast('Reset to Page 1');
+}
+
+/**
+ * Fetch topics.txt and render YouTube-style chapter navigation
+ */
+async function fetchAndRenderChapters(sampleId) {
+  const chaptersPanel = document.getElementById('chaptersPanel');
+  const chaptersList = document.getElementById('chaptersList');
+  const chaptersCount = document.getElementById('chaptersCount');
+
+  // Reset
+  chaptersList.innerHTML = '';
+  chaptersPanel.style.display = 'none';
+  AppState.chapters = [];
+
+  // Remove old timeline markers
+  const oldMarkers = document.querySelectorAll('#compTimelineContainer .timeline-chapter-marker');
+  oldMarkers.forEach(m => m.remove());
+
+  const topicsPath = encodeURI(`compressed/compressed ${sampleId}/topics.txt`);
+
+  let topicsText = '';
+  try {
+    const res = await fetch(topicsPath);
+    if (res.ok) {
+      topicsText = await res.text();
+    }
+  } catch (err) {
+    console.warn('Could not fetch topics.txt:', err);
+  }
+
+  if (!topicsText.trim()) return;
+
+  // Parse topics: "Topic Name [H:MM:SS-H:MM:SS]"
+  const lines = topicsText.trim().split('\n').filter(l => l.trim());
+  const chapters = lines.map((line, idx) => {
+    const match = line.match(/^(.+?)\s*\[(\d+):(\d+):(\d+)\s*-\s*(\d+):(\d+):(\d+)\]$/);
+    if (!match) return null;
+    const name = match[1].trim();
+    const startSec = parseInt(match[2]) * 3600 + parseInt(match[3]) * 60 + parseInt(match[4]);
+    const endSec = parseInt(match[5]) * 3600 + parseInt(match[6]) * 60 + parseInt(match[7]);
+    return { name, startSec, endSec, index: idx + 1 };
+  }).filter(Boolean);
+
+  if (chapters.length === 0) return;
+
+  AppState.chapters = chapters;
+  chaptersCount.textContent = `${chapters.length} topics`;
+  chaptersPanel.style.display = 'block';
+
+  // Render chapter items
+  chapters.forEach((ch) => {
+    const item = document.createElement('div');
+    item.className = 'chapter-item';
+    item.dataset.startSec = ch.startSec;
+    item.dataset.endSec = ch.endSec;
+
+    const durationMin = Math.floor((ch.endSec - ch.startSec) / 60);
+    const durationRemSec = (ch.endSec - ch.startSec) % 60;
+    const durStr = durationMin > 0 ? `${durationMin}m ${durationRemSec}s` : `${durationRemSec}s`;
+
+    const formatTs = (s) => {
+      const h = Math.floor(s / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      const sec = s % 60;
+      return `${h}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+    };
+
+    item.innerHTML = `
+      <div class="chapter-number">${ch.index}</div>
+      <div class="chapter-info">
+        <div class="chapter-title" title="${ch.name}">${ch.name}</div>
+        <div class="chapter-time-range">${formatTs(ch.startSec)} — ${formatTs(ch.endSec)}</div>
+      </div>
+      <div class="chapter-duration-badge">${durStr}</div>
+    `;
+
+    // Click to seek
+    item.addEventListener('click', () => {
+      if (compPlayer && compPlayer.video) {
+        compPlayer.video.currentTime = ch.startSec;
+        compPlayer.video.play().catch(() => {});
+      }
+    });
+
+    chaptersList.appendChild(item);
+  });
+
+  // Add timeline markers after video metadata is ready
+  const addMarkers = () => {
+    const duration = compPlayer.video.duration;
+    if (!duration || isNaN(duration)) return;
+
+    const track = document.querySelector('#compTimelineContainer .timeline-track');
+    if (!track) return;
+
+    chapters.forEach((ch) => {
+      if (ch.startSec === 0) return; // skip first marker at 0
+      const pct = (ch.startSec / duration) * 100;
+      const marker = document.createElement('div');
+      marker.className = 'timeline-chapter-marker';
+      marker.style.left = `${pct}%`;
+      track.appendChild(marker);
+    });
+  };
+
+  if (compPlayer.video.readyState >= 1 && compPlayer.video.duration) {
+    addMarkers();
+  } else {
+    compPlayer.video.addEventListener('loadedmetadata', addMarkers, { once: true });
+  }
+
+  // Update active chapter on timeupdate
+  compPlayer.video.addEventListener('timeupdate', updateActiveChapter);
+}
+
+/**
+ * Highlight the currently playing chapter
+ */
+function updateActiveChapter() {
+  if (!AppState.chapters || AppState.chapters.length === 0) return;
+  const currentTime = compPlayer.video.currentTime;
+  const items = document.querySelectorAll('#chaptersList .chapter-item');
+
+  items.forEach((item, idx) => {
+    const start = parseFloat(item.dataset.startSec);
+    const end = parseFloat(item.dataset.endSec);
+    if (currentTime >= start && currentTime < end) {
+      if (!item.classList.contains('active')) {
+        item.classList.add('active');
+        // Auto-scroll into view
+        item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    } else {
+      item.classList.remove('active');
+    }
+  });
 }
 
 /**

@@ -1,0 +1,5 @@
+Morphological Processing Applications and Extensions [0:00:00-0:06:35]
+Image Segmentation Rules and Region Properties [0:06:35-0:16:00]
+Edge Detection and Line vs Point Analysis [0:16:00-0:22:06]
+Thresholding Methods and Region-Based Segmentation [0:22:06-0:28:24]
+Clustering, Super Pixels, and Graph-Based Segmentation [0:28:24-0:36:39]
